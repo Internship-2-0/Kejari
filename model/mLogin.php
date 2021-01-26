@@ -8,6 +8,7 @@
                 $Admin = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = '$username'");
                 $dataAdmin = mysqli_fetch_array($Admin);
                 if ($_POST['username']== $dataAdmin['username'] && $_POST['password']==$dataAdmin['password']){
+                    $_SESSION['username'] = $username;
                     return 'login';
                 }else{
                     return '>>> invalid user';

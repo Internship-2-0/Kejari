@@ -11,23 +11,18 @@
             $this->mLogin = new mLogin(); //pemanggilan class
         }
 
-        public function cekLogin(){
+        public function cekLogin(){ //method pengecekan login
             if (isset($_SESSION['status'])) {
                 if($_SESSION['status'] == 'login'){
-                    return 'login';
+                    include 'view/mainMenu.php';
                 }
             } else{
-                return 'logout';
-            }
-        }
-
-        public function proses(){ //method proses
-            $_SESSION['status'] = $this->mLogin->getLogin();
-            $status = $_SESSION['status'];
-            if($status == 'login'){
-                include 'view/vIndex.php';
-            }else{
-                include 'view/vLogin.php';
+                $_SESSION['status'] = $this->mLogin->getLogin();
+                if($_SESSION['status'] == 'login'){
+                    include 'view/mainMenu.php';
+                }else{
+                    include 'view/vLogin.php';
+                }
             }
         }
     }
