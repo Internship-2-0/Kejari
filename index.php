@@ -2,4 +2,9 @@
 include_once "controller/cLogin.php";
 
 $cLogin = new cLogin();
-$cLogin->proses();
+$cekLogin = $cLogin->cekLogin();
+if($cekLogin == 'login'){
+    include 'view/vIndex.php';
+} else {
+    $cLogin->proses();
+}

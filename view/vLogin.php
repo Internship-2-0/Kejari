@@ -7,7 +7,7 @@
 </head>
   <body>
   	<?php
-	echo $reslt;
+	echo $status;
 	?>
     <div class="container">
       <div class="row justify-content-center mt-5">
@@ -15,17 +15,17 @@
           <div class="card">
             <div class="card-header bg-transparent mb-0"><h5 class="text-center">Tolong untuk <span class="font-weight-bold text-primary">Login</span></h5></div>
             <div class="card-body">
-              <form action="">
+              <form action="" method="POST">
                 <div class="form-group">
-                  <input id="username" type="text" name="username" class="form-control" required="re" placeholder="Masukan Username Anda">
+                  <input id="username" type="text" name="username" class="form-control" required="REQUIRED" placeholder="Masukan Username Anda">
                 </div>
                 <hr>
                 <div class="form-group">
-                  <input id="password" type="password" name="password" class="form-control" required="req" placeholder="Masukan Password Anda">
+                  <input id="password" type="password" name="password" class="form-control" required="REQUIRED" placeholder="Masukan Password Anda">
                 </div>
                 <hr>
                 <div class="form-group">
-                  <input type="submit" name="" value="Login" class="btn btn-primary btn-block">
+                  <input type="submit" name="submit" value="Login" class="btn btn-primary btn-block">
                 </div>
                  <div class="form-group">
                   <input type="reset" name="reset" value="Reset" class="btn btn-primary btn-block">

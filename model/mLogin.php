@@ -1,14 +1,13 @@
 <?php
-    session_start();
 
     class mLogin {
         public function getLogin() {
             include 'koneksi.php';
-            if(isset($_REQUEST['username']) && isset($_REQUEST['password'])){
-                $username = $_REQUEST['username'];
+            if(isset($_POST['username']) && isset($_POST['password'])){
+                $username = $_POST['username'];
                 $Admin = mysqli_query($koneksi,"SELECT * FROM admin WHERE username = '$username'");
                 $dataAdmin = mysqli_fetch_array($Admin);
-                if ($_REQUEST['username']=='admin' && $_REQUEST['password']=='admin'){
+                if ($_POST['username']== $dataAdmin['username'] && $_POST['password']==$dataAdmin['password']){
                     return 'login';
                 }else{
                     return '>>> invalid user';
