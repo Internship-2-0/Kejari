@@ -15,7 +15,7 @@
             if($result == 'login'){
                 include 'view/vIndex.php';
             }else{
-                include 'view/vLogin';
+                include 'view/vLogin.php';
             }
         }
     }
