@@ -7,7 +7,7 @@
             include 'pages/login.php';
           } else if ($_GET['halaman'] == 'logout') {
             include 'pages/logout.php';
-          }
+          } 
     }
     else {
     	include 'pages/home.php';
