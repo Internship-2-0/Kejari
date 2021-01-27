@@ -1,18 +1,17 @@
 <?php 
 
-include_once "koneksi.php";
-include_once "include/fLogin.php";
+include_once "../function/koneksi.php";
+include_once "../function/login.php";
 
 session_start();
 
-?>   <!-- nama server, username, password, nama database
- -->
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
   <title>Keputusan Jaksa RI</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

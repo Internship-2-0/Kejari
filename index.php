@@ -1,38 +1,38 @@
-<?php include 'header.php'; ?>
+<?php include 'pages/header.php'; ?>
 
 <?php 
 
 	if (isset($_GET['halaman'])) {
           if ($_GET['halaman'] == 'produk') {
-            include 'produk.php';
+            include 'pages/produk.php';
           }
           else if ($_GET['halaman'] == 'pelanggan') {
-            include 'pelanggan.php';
+            include 'pages/pelanggan.php';
           }
           else if ($_GET['halaman'] == 'pembelian') {
-            include 'pembelian.php';
+            include 'pages/pembelian.php';
           }
           else if ($_GET['halaman'] == 'logout') {
-            include 'logout.php';
+            include 'pages/logout.php';
           }
           else if ($_GET['halaman'] == 'detail') {
-            include 'detail.php';
+            include 'pages/detail.php';
           }
           else if ($_GET['halaman'] == 'tambah_produk') {
-            include 'tambah_produk.php';
+            include 'pages/tambah_produk.php';
           }
           else if ($_GET['halaman'] == 'hapus_produk') {
-            include 'hapus_produk.php';
+            include 'pages/hapus_produk.php';
           }
           else if ($_GET['halaman'] == 'ubah_produk') {
-            include 'ubah_produk.php';
+            include 'pages/ubah_produk.php';
           }
           else if ($_GET['halaman'] == 'logout') {
-            include 'logout.php';
+            include 'pages/logout.php';
           }
     }
     else {
-    	include 'home.php';
+    	include 'pages/home.php';
     }
 ?>
 

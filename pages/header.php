@@ -1,11 +1,11 @@
 <?php 
-include_once "koneksi.php";
+include_once "function/koneksi.php";
 
 session_start(); 
 
 if (!isset($_SESSION['admin'])) {
-  echo "<script>location='login.php';</script>";
-  header('location: login.php');
+  echo "<script>location='pages/login.php';</script>";
+  header('location: pages/login.php');
   exit();
 }
 ?>
@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin'])) {
 	<title>Kejari</title>
 	<meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
