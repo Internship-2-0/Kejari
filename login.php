@@ -1,8 +1,8 @@
 <?php 
 
-session_start();
+include_once "koneksi.php";
 
-$koneksi = new mysqli("localhost", "root", "", "cobatokoonline2_db") 
+session_start();
 
 ?>   <!-- nama server, username, password, nama database
  -->

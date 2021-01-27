@@ -1,8 +1,8 @@
-<?php $koneksi = new mysqli("localhost", "root", "", "cobatokoonline2_db") ?>   <!-- nama server, username, password, nama database
- --> 
-<?php session_start(); ?>
-
 <?php 
+include_once "koneksi.php";
+
+session_start(); 
+
 if (!isset($_SESSION['admin'])) {
   echo "<script>location='login.php';</script>";
   header('location: login.php');
@@ -19,9 +19,6 @@ if (!isset($_SESSION['admin'])) {
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
-<!-- <div class="tab">
-</div> -->
 
 <div class="sidenav">
 	<pre class="logo"><center><b>Toko</b>Batik</center></pre>
