@@ -25,4 +25,9 @@
                 }
             }
         }
+
+        public function logout(){
+            $_SESSION['status'] == 'logout';
+            session_destroy();
+        }
     }
