@@ -14,12 +14,12 @@
         public function cekLogin(){ //method pengecekan login
             if (isset($_SESSION['status'])) {
                 if($_SESSION['status'] == 'login'){
-                    include 'view/mainMenu.php';
+                    include 'view/vMenu.php';
                 }
             } else{
                 $_SESSION['status'] = $this->mLogin->getLogin();
                 if($_SESSION['status'] == 'login'){
-                    include 'view/mainMenu.php';
+                    include 'view/vMenu.php';
                 }else{
                     include 'view/vLogin.php';
                 }
