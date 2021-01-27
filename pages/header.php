@@ -1,5 +1,4 @@
 <?php 
-include_once "function/koneksi.php";
 
 session_start(); 
 
