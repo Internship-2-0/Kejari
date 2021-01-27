@@ -1,7 +1,7 @@
 <?php 
 
 include_once "../function/koneksi.php";
-include_once "../function/login.php";
+include_once "../function/fLogin.php";
 
 session_start();
 
@@ -11,7 +11,7 @@ session_start();
 <html>
 <head>
   <title>Keputusan Jaksa RI</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

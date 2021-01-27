@@ -12,8 +12,8 @@
           else if ($_GET['halaman'] == 'pembelian') {
             include 'pages/pembelian.php';
           }
-          else if ($_GET['halaman'] == 'logout') {
-            include 'pages/logout.php';
+          else if ($_GET['halaman'] == 'login') {
+            include 'pages/login.php';
           }
           else if ($_GET['halaman'] == 'detail') {
             include 'pages/detail.php';
