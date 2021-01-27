@@ -10,7 +10,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Toko Batik | Login</title>
+  <title>Keputusan Jaksa RI</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
