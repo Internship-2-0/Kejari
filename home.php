@@ -1,1 +1,1 @@
-<h2 class="main text-title">Selamat datang administrator</h2>
+<h2 class="main text-title">Selamat Datang</h2>
