@@ -1,4 +1,3 @@
-<style>
 	body {
 	  	margin: 0px;
 	  	font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -175,5 +174,49 @@
 		font-size: 10pt;
 	}
 
+<<<<<<< HEAD
+	.nav-link:hover {
+		background-color: grey; 
+	}
+	
+	/* Style the caret/arrow */
+	.caret {
+		cursor: pointer;
+		user-select: none; /* Prevent text selection */
+	}
+	
+	/* Create the caret/arrow with a unicode, and style it */
+	.caret::after {
+		content: "\25B6";
+		color: white;
+		display: inline-block;
+		margin-right: 6px;
+	}
+	
+	/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+	.caret-down::before {
+		transform: rotate(90deg);
+	}
+	
+	/* Hide the nested list */
+	.nested {
+		display: none;
+	}
+	
+	/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+	.active {
+		display: block;
+	}
+=======
+	.container {
+		width: 30%;
+		margin-top: 10%;
+		box-shadow: 0px 0px 30px 1px black;
+		padding: 40px;
+	}
+	.button {
+		width: 55%;
+	}
 
 </style>
+>>>>>>> 8e25119cb42ffa1c646e795a4ea12ef4d4b4c276
