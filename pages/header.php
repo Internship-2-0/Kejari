@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin'])) {
 
 		<div class="icon ml-4">
 			<h5>
-				<i class="fas fa-sign-out-alt mr-3" data-toogle="tooltip" title="Sign-out"></i>
+				<a href="index.php?halaman=logout"><i class="fas fa-sign-out-alt mr-3" data-toogle="tooltip" title="Sign-out"></i></a>
 			</h5>
 		</div>
 	</nav>
@@ -55,11 +55,11 @@ if (!isset($_SESSION['admin'])) {
 					<hr class="bg-secondary">
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-white" href="#"><i class="far fa-edit mr-2"></i>Surat Tugas</a>
+					<a class="nav-link text-white" href="index.php?halaman=data_pegawai"><i class="fas fa-user-edit mr-2"></i>Data_Pegawai</a>
 					<hr class="bg-secondary">
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-white" href="#"><i class="fas fa-user-edit mr-2"></i>Data Pegawai</a>
+					<a class="nav-link text-white" href="index.php?halaman=history"><i class="far fa-edit mr-2"></i>History</a>
 					<hr class="bg-secondary">
 				</li>
 			</ul>
