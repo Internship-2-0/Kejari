@@ -174,7 +174,6 @@
 		font-size: 10pt;
 	}
 
-<<<<<<< HEAD
 	.nav-link:hover {
 		background-color: grey; 
 	}
@@ -207,7 +206,7 @@
 	.active {
 		display: block;
 	}
-=======
+
 	.container {
 		width: 30%;
 		margin-top: 10%;
@@ -218,5 +217,3 @@
 		width: 55%;
 	}
 
-</style>
->>>>>>> 8e25119cb42ffa1c646e795a4ea12ef4d4b4c276
