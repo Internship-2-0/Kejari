@@ -6,7 +6,7 @@
       Pilih Surat
     </button>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Surat Perintah Tugas</a>
+      <a class="dropdown-item" href="index.php?halaman=buat_spt">Surat Perintah Tugas</a>
       <a class="dropdown-item" href="#">Link 2</a>
       <a class="dropdown-item" href="#">Link 3</a>
       <a class="dropdown-item" href="#">Link 4</a>

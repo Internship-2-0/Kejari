@@ -7,9 +7,11 @@
     if ($_GET['halaman'] == 'history') {
       include 'pages/history.php';
     } else if ($_GET['halaman'] == 'data_pegawai') {
-      include 'pages/data_pegawai.php'; 
+      include 'pages/data_pegawai.php';
     } else if ($_GET['halaman'] == 'logout') {
       include 'pages/logout.php';
+    } else if ($_GET['halaman'] == 'buat_spt') {
+      include 'pages/buat_spt.php';
     }
   } else {
     include 'pages/home.php';
