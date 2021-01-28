@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_destroy();
 echo "<script>alert('Logout Berhasil')</script>";

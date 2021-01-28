@@ -1,4 +1,4 @@
-<?php  
+<?php
 $koneksi = mysqli_connect("localhost","root","","kejari");
 //cek koneksi
 if (mysqli_connect_errno()) {
