@@ -1,15 +1,15 @@
 <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 <script lang="javascript">
+    var idf = 1;
     function tambahMenimbang(){
-        var idf = document.getElementById("idf").nodeValue;
         var stre;
-        stre = "<input id=\"srow" + idf + "\" type=\"text\" name=\"menimbang[]\" class=\"form-control\" placeholder=\"menimbang" + idf "\"/> <a href=\"#\" onclick=\"hapusElemen(\"#srow" + idf + "\"); return false;\">Hapus</a>";
+        stre = "<div id=\"srow" + idf + "\"><input type=\"text\" name=\"menimbang[]\" class=\"form-control\" placeholder=\"menimbang" + idf + "\"/> <button href=\"#\" class=\"btn btn-primary mt-2 mb-2\" onclick=\"hapusElemen(srow" + idf +"); return false;\">Hapus</button></div >";
         $("#menimbang").append(stre);
-        idf = (idf-1) + 2;
-        document.getElementById("idf").nodeValue = idf;
+        idf += 1;
     }
 
-    function hapusElemen(idf){
-        $(idf).remove();
+    function hapusElemen(menimbang){
+        $(menimbang).remove();
+        idf -= 1;
     }
 </script>

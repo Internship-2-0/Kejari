@@ -1,5 +1,5 @@
 <?php
-  include "../../include/fSpt.php";
+  include "../Kejari/include/fSpt.php";
 ?>
 <html lang="en">
 <div class="ml-4">
@@ -43,9 +43,18 @@
 
       <div class="form-group">
         <label for="menimbang">Menimbang</label>
-        <input id="idf" value="1" type="hidden">
-        <button type="button" onclick="tambahMenimbang();return false;">Tambah Daftar Menimbang</button>
+        <button class="btn btn-primary mb-2 ml-2" type="button" onclick="tambahMenimbang();return false;">Tambah Daftar Menimbang</button>
         <div id="menimbang"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="dasar_1">Dasar I</label>
+        <input type="text" name="dasar_1" class="form-control" placeholder="Dasar I">
+      </div>
+
+      <div class="form-group">
+        <label for="dasar_2">Dasar II</label>
+        <input type="text" name="dasar_2" class="form-control" placeholder="Dasar II">
       </div>
 
       <div class="form-group">
