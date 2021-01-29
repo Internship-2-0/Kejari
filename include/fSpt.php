@@ -12,7 +12,8 @@
     //append petugas
     var jmlhPetugas = 1;
     function tambahPetugas(){
-
+        var strPetugas;
+        strPetugas = 
     }
 
     //hapus elemen/append
