@@ -19,7 +19,7 @@
     var jmlhMenimbang = 1;
     function tambahMenimbang(){
         var strMenimbang;
-        strMenimbang = "<div id=\"srow" + jmlhMenimbang + "\"><input type=\"text\" name=\"menimbang[]\" class=\"form-control\" placeholder=\"menimbang " + jmlhMenimbang + "\"/> <button href=\"#\" class=\"btn btn-primary mt-2 mb-2\" onclick=\"hapusElemen(srow" + jmlhMenimbang +",jmlhMenimbang); return false;\">Hapus</button></div >";
+        strMenimbang = "<div id=\"srow" + jmlhMenimbang + "\" class=\"mb-2\" ><input type=\"text\" name=\"menimbang[]\" class=\"form-control\" placeholder=\"menimbang " + jmlhMenimbang + "\"/></div >";
         $("#menimbang").append(strMenimbang);
         jmlhMenimbang += 1;
     }

@@ -43,7 +43,8 @@
 
       <div class="form-group">
         <label for="menimbang">Menimbang</label>
-        <button class="btn btn-primary mb-2 ml-2" type="button" onclick="tambahMenimbang();return false;">Tambah Daftar Menimbang</button>
+        <button class="btn btn-primary mt-2 mb-2 ml-2" type="button" onclick="tambahMenimbang();return false;">Tambah Daftar Menimbang</button>
+        <button class="btn btn-primary mt-2 mb-2" onclick="hapusElemen(srow+jmlhMenimbang,jmlhMenimbang); return false;">Hapus</button>
         <div id="menimbang"></div>
       </div>
 
