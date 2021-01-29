@@ -51,7 +51,7 @@ if (!isset($_SESSION['admin'])) {
 		<div class="col-md-2 bg-dark mt-2 pr-3 pt-4">
 			<ul class="nav flex-column ml-3 mb-5">
 				<li class="nav-item">
-					<a class="nav-link active text-white" href="index.php"><i class="fas fa-home mr-2"></i> Dashboard</a>
+					<a class="nav-link active text-white" href="index.php"><i class="fas fa-home mr-2"></i>Dashboard</a>
 					<hr class="bg-secondary">
 				</li>
 				<li class="nav-item">
