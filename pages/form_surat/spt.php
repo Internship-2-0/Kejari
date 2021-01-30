@@ -68,6 +68,21 @@
       </div>
 
       <div class="form-group">
+        <label for="untuk_1">Untuk I</label>
+        <input type="text" name="untuk_1" class="form-control" placeholder="Untuk I">
+      </div>
+
+      <div class="form-group">
+        <label for="untuk_2">Untuk II</label>
+        <input type="text" name="untuk_2" class="form-control" placeholder="Untuk II">
+      </div>
+
+      <div class="form-group">
+        <label for="kota">Kota</label>
+        <input type="text" name="kota" class="form-control" placeholder="kota">
+      </div>
+
+      <div class="form-group">
         <label for="alamat">Alamat</label>
         <textarea class="form-control" id="alamat" rows="3" placeholder="Contoh textarea .."></textarea>
       </div>
