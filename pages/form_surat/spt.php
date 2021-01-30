@@ -60,17 +60,10 @@
 
       <div class="form-group">
         <label for="petugas">Petugas</label>
-        <button class="btn btn-primary mb-2 ml-2" type="button" onclick="tambahPetugas();return false;">Tambah Daftar Petugas</button>
-        <div id="petugas"></div>
-      </div>
-
-      <div class="form-group">
-        <label for="pekerjaan">Pekerjaan</label>
-        <select id="pekerjaan" class="form-control">
-          <option value="">- Pilih Pekerjaan</option>
-          <option value="">Programmer</option>
-          <option value="">Web Designer</option>
-          <option value="">Pengusaha</option>
+        <select id="pilihPetugas" class="selectpicker form-control" name="petugas[]" multiple="multiple">
+          <?php
+            tampilPetugas($koneksi, $petugas);
+          ?>
         </select>
       </div>
 

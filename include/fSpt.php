@@ -5,12 +5,20 @@
 
 <?php
     include "koneksi.php";
-
+    
     //data petugas
-    $data_petugas = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM petugas"));
-
-
-
+    $petugas = mysqli_query($koneksi,"SELECT * FROM `petugas` ORDER BY `petugas`.`nip` ASC");
+    
+    //tampil petugas
+    function tampilPetugas($koneksi, $petugas){
+        while($data_petugas = mysqli_fetch_array($petugas)){
+            if ($data_petugas['nip'] != null){   
+                ?>
+                <option value="<?php echo $data_petugas['nip'] ?>"><?php echo $data_petugas['nip'] ?> - <?php echo $data_petugas['nama'] ?></option>
+            <?php
+            }
+        }
+    }
 ?>
 
 <script lang="javascript">
@@ -30,12 +38,13 @@
             $("#srow"+jmlhMenimbang).remove();
         }
     }
-    
-    //append petugas
-    var jmlhPetugas = 1;
-    function tambahPetugas(){
-        var strPetugas;
-        strPetugas = "<div id=\"srow" + jmlhPetugas + "\"><select name=\"petugasSpt[]\" class=\"form-control\" placeholder=\"menimbang " + jmlhMenimbang + "\"/> <button href=\"#\" class=\"btn btn-primary mt-2 mb-2\" onclick=\"hapusElemen(srow" + jmlhMenimbang +",jmlhMenimbang); return false;\">Hapus</button></div >";
-    }
+
+    $(document).ready(function() {
+        $("#pilihPetugas").select2({
+        placeholder: 'Pilih Petugas ',
+        allowClear: true
+        });
+    })
 
 </script>
+
