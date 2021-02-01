@@ -73,16 +73,15 @@ include "../Kejari/include/fSpt.php";
           <hr>
           <div class="form-group">
             <label for="menimbang">Menimbang</label>
-            <div id="menimbang">
-            </div>
+            <div id="menimbang"></div>
             <!-- <input type="text" class="form-control"> -->
             <button class="btn btn-danger mt-2" onclick="hapusMenimbang(); return false;">Hapus</button>
             <button class="btn btn-primary mt-2" type="button" onclick="tambahMenimbang();return false;">Tambah</button>
           </div>
           <div class=" form-group">
             <label for="dasar">Dasar</label>
-            <input type="text" class="form-control">
-            <input type="text" class="form-control mt-2">
+            <input type="text" name="dasar_1" class="form-control" placeholder="Dasar 1">
+            <input type="text" name="dasar_2" class="form-control mt-2" placeholder="Dasar 2">
           </div>
         </div>
 
@@ -104,15 +103,15 @@ include "../Kejari/include/fSpt.php";
           <hr>
           <div class="form-group">
             <label for="tugas">Ditugaskan Untuk</label>
-            <input type="text" class="form-control">
-            <input type="text" class="form-control mt-2">
+            <input type="text" name="untuk_1" class="form-control">
+            <input type="text" name="untuk_2" class="form-control mt-2">
           </div>
           <div class="form-group">
             <label for="tgl_tugas"> Tanggal Pelaksanaan</label>
             <div class="form-inline">
-              <input type="text" class="form-control mb-2 mr-sm-2">
+              <input type="text" name="tgl_mulai" class="form-control mb-2 mr-sm-2">
               <p>s/d</p>
-              <input type="text" class="form-control mb-2 ml-sm-2">
+              <input type="text" name="tgl_selesai" class="form-control mb-2 ml-sm-2">
             </div>
           </div>
         </div>
@@ -122,11 +121,11 @@ include "../Kejari/include/fSpt.php";
           <hr>
           <div class="form-group">
             <label for="kota_keluar">Tempat Surat Diterbitkan</label>
-            <input type="text" class="form-control">
+            <input type="text" name="kota" class="form-control">
           </div>
           <div class="form-group">
             <label for="kota_keluar">Tembusan</label>
-            <input type="text" class="form-control">
+            <input type="text" name="tembusan" class="form-control">
             <button class="btn btn-danger mt-2">Hapus</button>
             <button class="btn btn-primary mt-2">Tambah</button>
           </div>
