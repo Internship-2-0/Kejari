@@ -27,11 +27,36 @@ include "../Kejari/include/fSpt.php";
           </div>
           <div class="form-group">
             <label for="nama_instansi">Nama Instansi</label>
-            <input type="text" class="form-control">
+            <input type="text" name="nama_instansi" class="form-control" placeholder="contoh: Kejaksaan Agung">
           </div>
           <div class="form-group">
             <label for="pimpinan_instansi">Pimpinan Instansi</label>
-            <input type="text" class="form-control">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="pimpinan_instansi" id="pimpinan_instansi" value="JAKSA AGUNG MUDA INTELIJEN" checked>
+              <label class="form-check-label" for="pimpinan_instansi">
+                JAKSA AGUNG MUDA INTELIJEN
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="pimpinan_instansi" id="pimpinan_instansi2" value="KEPALA KEJAKSAAN TINGGI">
+              <label class="form-check-label" for="pimpinan_instansi">
+                KEPALA KEJAKSAAN TINGGI
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="pimpinan_instansi" id="pimpinan_instansi3" value="KEPALA KEJAKSAAN NEGERI">
+              <label class="form-check-label" for="pimpinan_instansi">
+                KEPALA KEJAKSAAN NEGERI
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="pimpinan_instansi" id="pimpinan_instansi4" value="KEPALA CABANG KEJAKSAAN NEGERI">
+              <label class="form-check-label" for="pimpinan_instansi">
+                KEPALA CABANG KEJAKSAAN NEGERI
+              </label>
+            </div>
+
+            <!-- <input type="text" class="form-control" placeholder="contoh: KEPALA KEJAKSAAN TINGGI"> -->
           </div>
           <div class="form-group">
             <label for="tanggal_terbit">Tanggal Penerbitan</label>
