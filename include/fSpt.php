@@ -8,7 +8,7 @@
     
     //data petugas
     $petugas = mysqli_query($koneksi,"SELECT * FROM `petugas` ORDER BY `petugas`.`nip` ASC");
-    
+
     //tampil petugas
     function tampilPetugas($koneksi, $petugas){
         while($data_petugas = mysqli_fetch_array($petugas)){
@@ -19,6 +19,7 @@
             }
         }
     }
+
 ?>
 
 <script lang="javascript">
@@ -40,9 +41,15 @@
     }
 
     $(document).ready(function() {
+        //pilih petugas
         $("#pilihPetugas").select2({
-        placeholder: 'Pilih Petugas ',
-        allowClear: true
+            placeholder: 'Pilih Petugas ',
+            allowClear: true
+        });
+        //pilih petugas
+        $("#pilihTembusan").select2({
+            placeholder: 'Pilih Tembusan ',
+            allowClear: true
         });
     })
 

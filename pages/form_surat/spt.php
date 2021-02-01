@@ -61,7 +61,7 @@
       <div class="form-group">
         <label for="petugas">Petugas</label>
         <select id="pilihPetugas" class="selectpicker form-control" name="petugas[]" multiple="multiple">
-          <?php
+          <?php 
             tampilPetugas($koneksi, $petugas);
           ?>
         </select>
@@ -78,13 +78,22 @@
       </div>
 
       <div class="form-group">
+        <label for="mulai_dan_selesai">Tanggal Pelaksanaan</label>
+        <input type="text" name="mulai" class="form-control" placeholder="Tanggal Pelaksanaan">
+      </div>
+
+      <div class="form-group">
         <label for="kota">Kota</label>
         <input type="text" name="kota" class="form-control" placeholder="kota">
       </div>
 
       <div class="form-group">
-        <label for="alamat">Alamat</label>
-        <textarea class="form-control" id="alamat" rows="3" placeholder="Contoh textarea .."></textarea>
+        <label for="tembusan">Tembusan</label>
+        <select id="pilihTembusan" class="selectpicker form-control" name="tembusan[]" multiple="multiple">
+          <?php 
+            tampilPetugas($koneksi, $petugas);
+          ?>
+        </select>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
