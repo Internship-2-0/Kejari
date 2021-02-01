@@ -20,6 +20,10 @@
         }
     }
 
+    function inputDatabase(){
+        
+    }
+
 ?>
 
 <script lang="javascript">
@@ -31,6 +35,15 @@
         $("#menimbang").append(strMenimbang);
         jmlhMenimbang += 1;
     }
+
+    //append tembusan
+    var jmlhTembusan = 1;
+    function tambahTembusan(){
+        var strTembusan;
+        strTembusan = "<div id=\"trow" + jmlhTembusan + "\" class=\"mb-2\" ><input type=\"text\" name=\"tembusan[]\" class=\"form-control\" placeholder=\"tembusan " + jmlhTembusan + "\"/></div >";
+        $("#tembusan").append(strTembusan);
+        jmlhTembusan += 1;
+    }
     
     //hapus elemen/append
     function hapusMenimbang(){
@@ -40,16 +53,18 @@
         }
     }
 
+    //hapus elemen/append
+    function hapusTembusan(){
+        if(jmlhTembusan != 1){
+            jmlhTembusan -= 1;
+            $("#trow"+jmlhTembusan).remove();
+        }
+    }
+
     $(document).ready(function() {
         //pilih petugas
         $("#pilihPetugas").select2({
-            placeholder: 'Pilih Petugas ',
-            allowClear: true
-        });
-        //pilih petugas
-        $("#pilihTembusan").select2({
-            placeholder: 'Pilih Tembusan ',
-            allowClear: true
+            placeholder: 'Pilih Petugas '
         });
     })
 

@@ -1,7 +1,7 @@
 <?php
+    include "koneksi.php";
 
-    function cekLogin(){
-        include "koneksi.php";
+    function cekLogin($koneksi){
         if (isset($_POST['login'])) {
             $ambil = $koneksi->query("SELECT * FROM admin WHERE username = '$_POST[username]' AND password = '$_POST[password]' ");
             $cocok = $ambil->num_rows;

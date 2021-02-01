@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <form method="post">
+    <form action="../kejari/pages/tampil_surat/spt.php" method="post" target=”_blank”>
       
       <div class="form-group">
         <label for="nomor_surat">Nomor Surat</label>
@@ -43,7 +43,7 @@
 
       <div class="form-group">
         <label for="menimbang">Menimbang</label>
-        <button class="btn btn-primary mt-2 mb-2 ml-2" type="button" onclick="tambahMenimbang();return false;">Tambah Daftar Menimbang</button>
+        <button class="btn btn-primary mt-2 mb-2 ml-2" type="button" onclick="tambahMenimbang();return false;">Tambah Menimbang</button>
         <button class="btn btn-primary mt-2 mb-2" onclick="hapusMenimbang(); return false;">Hapus</button>
         <div id="menimbang"></div>
       </div>
@@ -61,7 +61,7 @@
       <div class="form-group">
         <label for="petugas">Petugas</label>
         <select id="pilihPetugas" class="selectpicker form-control" name="petugas[]" multiple="multiple">
-          <?php 
+        <?php 
             tampilPetugas($koneksi, $petugas);
           ?>
         </select>
@@ -89,11 +89,9 @@
 
       <div class="form-group">
         <label for="tembusan">Tembusan</label>
-        <select id="pilihTembusan" class="selectpicker form-control" name="tembusan[]" multiple="multiple">
-          <?php 
-            tampilPetugas($koneksi, $petugas);
-          ?>
-        </select>
+        <button class="btn btn-primary mt-2 mb-2 ml-2" type="button" onclick="tambahTembusan();return false;">Tambah Tembusan</button>
+        <button class="btn btn-primary mt-2 mb-2" onclick="hapusTembusan(); return false;">Hapus</button>
+        <div id="tembusan"></div>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
