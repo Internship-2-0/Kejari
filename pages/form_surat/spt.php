@@ -59,11 +59,9 @@ include "../Kejari/include/fSpt.php";
             <!-- <input type="text" class="form-control" placeholder="contoh: KEPALA KEJAKSAAN TINGGI"> -->
           </div>
           <div class="form-group">
-            <label for="tanggal_terbit">Tanggal Penerbitan</label>
+            <label for="tanggal_terbit">Tanggal Penerbitan Surat</label>
             <div class="form-inline">
-              <input type="text" name="tanggal" class="form-control mb-2 mr-sm-2" placeholder="Tanggal">
-              <input type="text" name="tahun" class="form-control mb-2 mr-sm-2" placeholder="Bulan">
-              <input type="text" name="tahun" class="form-control mb-2" placeholder="Tahun">
+              <input type="date" name="tanggal_terbit" class="form-control mb-2 mr-sm-2" placeholder="Tanggal">
             </div>
           </div>
         </div>
@@ -109,9 +107,9 @@ include "../Kejari/include/fSpt.php";
           <div class="form-group">
             <label for="tgl_tugas"> Tanggal Pelaksanaan</label>
             <div class="form-inline">
-              <input type="text" name="tgl_mulai" class="form-control mb-2 mr-sm-2">
+              <input type="date" name="tgl_mulai" class="form-control mb-2 mr-sm-2">
               <p>s/d</p>
-              <input type="text" name="tgl_selesai" class="form-control mb-2 ml-sm-2">
+              <input type="date" name="tgl_selesai" class="form-control mb-2 ml-sm-2">
             </div>
           </div>
         </div>
@@ -121,13 +119,14 @@ include "../Kejari/include/fSpt.php";
           <hr>
           <div class="form-group">
             <label for="kota_keluar">Tempat Surat Diterbitkan</label>
-            <input type="text" name="kota" class="form-control">
+            <input type="text" name="kota" class="form-control" placeholder="contoh: Semarang">
           </div>
           <div class="form-group">
             <label for="kota_keluar">Tembusan</label>
-            <input type="text" name="tembusan" class="form-control">
-            <button class="btn btn-danger mt-2">Hapus</button>
-            <button class="btn btn-primary mt-2">Tambah</button>
+            <!-- <input type="text" name="tembusan" class="form-control"> -->
+            <div id="tembusan"></div>
+            <button class="btn btn-danger mt-2" type="button" onclick="hapusTembusan(); return false;">Hapus</button>
+            <button class="btn btn-primary mt-2" type="button" onclick="tambahTembusan();return false;">Tambah</button>
           </div>
         </div>
 
