@@ -20,9 +20,9 @@ include "../Kejari/include/fSpt.php";
             <label for="nomor_surat">Nomor Surat</label>
             <div class="form-inline">
               SP.TUG -
-              <input type="number" name="nomor_surat1" class="form-control mb-2 mr-sm-2 ml-2" placeholder="nomor surat">/
-              <input type="number" name="nomor_surat2" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode pejabat">/
-              <input type="number" name="nomor_surat3" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode masalah">
+              <input type="text" name="nomor_surat1" class="form-control mb-2 mr-sm-2 ml-2" placeholder="nomor surat">/
+              <input type="text" name="nomor_surat2" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode pejabat">/
+              <input type="text" name="nomor_surat3" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode masalah">
             </div>
           </div>
           <div class="form-group">
