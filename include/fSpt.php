@@ -59,7 +59,7 @@
                 mysqli_query($koneksi, "INSERT INTO tembusan_spt (id_spt, isi) VALUES ('$id_spt', '$isi')");
             }
             
-            echo "<script> alert('Login Sukses') </script>";
+            echo "<script> alert('Pembuatan Surat Sukses') </script>";
             echo "<meta http-equiv='refresh' content='1; url=../kejari/template_surat/tSpt.php?id=" . $id_spt . "'>";
         } 
     }

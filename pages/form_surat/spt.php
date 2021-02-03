@@ -25,7 +25,7 @@ include "../Kejari/include/fSpt.php";
               <input type="text" name="kode_masalah" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode masalah">
             </div>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="nama_instansi">Nama Instansi</label>
             <input type="text" name="nama_instansi" class="form-control" placeholder="contoh: Kejaksaan Agung">
           </div>
@@ -55,9 +55,7 @@ include "../Kejari/include/fSpt.php";
                 KEPALA CABANG KEJAKSAAN NEGERI
               </label>
             </div>
-
-            <!-- <input type="text" class="form-control" placeholder="contoh: KEPALA KEJAKSAAN TINGGI"> -->
-          </div>
+          </div> -->
           <div class="form-group">
             <label for="tanggal_terbit">Tanggal Penerbitan Surat</label>
             <div class="form-inline">
