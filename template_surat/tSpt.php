@@ -4,67 +4,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="tSpt.css">
   <title>Document</title>
 </head>
 
-<body>
-  <div>
-    <center>
-      <h3>KEJAKSAAN REPUBLIK INDONESIA</h3>
-      <h2>KEJAKSAAN TINGGI JAWA TENGAH</h2>
-      <h1>KEJAKSAAN NEGERI KOTA SEMARANG</h1>
-      <p>
-        Jl. Abdulrahman Saleh No.5-9, Kota Semarang 50145
-      </p>
-      <p>
-        Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id
-      </p>
-      <hr>
-    </center>
+<body class="margin_surat fonts">
+  <div class="height center">
+    <b>
+      <span class="size12">KEJAKSAAN REPUBLIK INDONESIA</span>
+      <br>
+      <span class="size15">KEJAKSAAN TINGGI JAWA TENGAH</span>
+      <br>
+      <span class="size19">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+    </b>
+    <br>
+    <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145
+      <br>
+      Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
+    <hr>
   </div>
 
-  <div style="text-align: right;">
-    <p>IN.1</p>
-    <p>Copy ke : </p>
-    <p>Dari : </p>
+  <div class="right">
+    <span class="size12"><b>IN.1</b></span>
+    <br><br>
+    <span class="size10">Copy ke : </span>
+    <br>
+    <span class="size10">Dari : </span>
   </div>
-  <br>
+  <br><br>
+
   <div>
     <center>
-      <h4>SURAT PERINTAH TUGAS</h4>
-      <p>NOMOR: </p>
-      <h4>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG</h4>
+      <span class="size12"><b><u>SURAT PERINTAH TUGAS</u></b></span>
+      <br>
+      NOMOR:
+      <br><br>
+      <b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG</b></span>
+      <br><br>
     </center>
+
+    <table class="size11">
+      <tr>
+        <td>Menimbang : </td>
+        <td></td>
+      </tr>
+    </table>
     <br>
 
-    <div>
-      <div style="margin-left: 2rem;">
-        <p>Menimbang : </p>
-        <p>Dasar : </p>
-      </div>
-      <p><b>
-          <center>MEMERINTAHKAN</center>
-        </b></p>
-      <div style="margin-left: 2rem">
-        <p>Kepada : </p>
-        <br>
-        <p>Untuk : </p>
-      </div>
-    </div>
+    <table>
+      <tr>
+        <td>Dasar : </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+
+    <span class="size11">
+      <center><b>M E M E R I N T A H K A N</b></center>
+    </span>
+    <br>
+
+    <table class="size11">
+      <tr>
+        <td>Kepada : </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <table class="size11">
+      <tr>
+        <td>Untuk : </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
   </div>
-  </div>
-  <div style="text-align: right;">
-    <p>Dikeluarkan di : (Kota)</p>
-    <p>Pada tanggal : (Tgl terbit)</p>
-    <p><b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG,</b></p>
-    <br><br><br>
-    <p><b>SUMURUNG P. SIMAREMARE, S.H., M.H.</b></p>
-    <p><b>JAKSA UTAMA PRATAMA NIP. 197007221993031003</b></p>
+
+
+  <div class="right size11">
+    <span>
+      Dikeluarkan di : (Kota)
+      <br>
+      Pada tanggal : (Tgl terbit)
+    </span>
+    <br><br>
+    <span><b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG,</b></span>
+    <br><br><br><br><br>
+    <span><b>SUMURUNG P. SIMAREMARE, S.H., M.H.</b></span>
+    <br>
+    <span><b>JAKSA UTAMA PRATAMA NIP. 197007221993031003</b></span>
   </div>
   <br>
 
-  <p>Tembusan : </p>
-
+  <div>
+    <span>Tembusan : </span>
+    <table>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
 
 
 </body>
