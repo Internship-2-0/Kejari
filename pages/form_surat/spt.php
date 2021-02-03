@@ -10,7 +10,7 @@ include "../Kejari/include/fSpt.php";
 
   <body>
     <h2 class="tittle text-center mt-4 mb-4">Form Surat Perintah Tugas</h2>
-    <form action="../kejari/pages/tampil_surat/spt.php" method="post" target=”_blank”>
+    <form method="post">
 
       <div class="container">
         <div class="box shadow">
@@ -20,9 +20,9 @@ include "../Kejari/include/fSpt.php";
             <label for="nomor_surat">Nomor Surat</label>
             <div class="form-inline">
               SP.TUG -
-              <input type="text" name="nomor_surat1" class="form-control mb-2 mr-sm-2 ml-2" placeholder="nomor surat">/
-              <input type="text" name="nomor_surat2" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode pejabat">/
-              <input type="text" name="nomor_surat3" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode masalah">
+              <input type="text" name="nomor_surat" class="form-control mb-2 mr-sm-2 ml-2" placeholder="nomor surat">/
+              <input type="text" name="kode_pejabat" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode pejabat">/
+              <input type="text" name="kode_masalah" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode masalah">
             </div>
           </div>
           <div class="form-group">
@@ -90,7 +90,7 @@ include "../Kejari/include/fSpt.php";
             <label for="petugas">Petugas</label>
             <select id="pilihPetugas" class="selectpicker form-control" name="petugas[]" multiple="multiple">
               <?php
-              tampilPetugas($koneksi, $petugas);
+                tampilPetugas($koneksi, $petugas);
               ?>
             </select>
           </div>
@@ -107,9 +107,9 @@ include "../Kejari/include/fSpt.php";
           <div class="form-group">
             <label for="tgl_tugas"> Tanggal Pelaksanaan</label>
             <div class="form-inline">
-              <input type="date" name="tgl_mulai" class="form-control mb-2 mr-sm-2">
+              <input type="date" name="mulai" class="form-control mb-2 mr-sm-2">
               <p>s/d</p>
-              <input type="date" name="tgl_selesai" class="form-control mb-2 ml-sm-2">
+              <input type="date" name="selesai" class="form-control mb-2 ml-sm-2">
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ include "../Kejari/include/fSpt.php";
           <hr>
           <div class="form-group">
             <label for="kota_keluar">Tempat Surat Diterbitkan</label>
-            <input type="text" name="kota" class="form-control" placeholder="contoh: Semarang">
+            <input type="text" name="tempat" class="form-control" placeholder="contoh: Semarang">
           </div>
           <div class="form-group">
             <label for="kota_keluar">Tembusan</label>
@@ -130,94 +130,13 @@ include "../Kejari/include/fSpt.php";
           </div>
         </div>
 
-
-        <!-- <div class="form-group">
-          <label for="nomor_surat">Nomor Surat</label>
-          <input type="number" name="nomor_surat" class="form-control" placeholder="Nomor Surat">
-        </div>
-
-        <div class="form-group">
-          <label for="kode_pejabat">Kode Pejabat</label>
-          <input type="number" name="kode_pejabat" class="form-control" placeholder="Kode Pejabat">
-        </div>
-
-        <div class="form-group">
-          <label for="kode_masalah">Kode Masalah</label>
-          <input type="number" name="kode_masalah" class="form-control" placeholder="Kode Masalah">
-        </div>
-
-        <div class="form-group">
-          <label for="tanggal">Tanggal</label>
-          <input type="number" name="tanggal" class="form-control" placeholder="Tanggal">
-        </div>
-
-        <div class="form-group">
-          <label for="bulan">Bulan</label>
-          <input type="number" name="bulan" class="form-control" placeholder="Bulan">
-        </div>
-
-        <div class="form-group">
-          <label for="tahun">Tahun</label>
-          <input type="number" name="tahun" class="form-control" placeholder="Tahun">
-        </div>
-
-        <div class="form-group">
-          <label for="menimbang">Menimbang</label>
-          <button class="btn btn-primary mt-2 mb-2 ml-2" type="button" onclick="tambahMenimbang();return false;">Tambah Menimbang</button>
-          <button class="btn btn-primary mt-2 mb-2" onclick="hapusMenimbang(); return false;">Hapus</button>
-          <div id="menimbang"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="dasar_1">Dasar I</label>
-          <input type="text" name="dasar_1" class="form-control" placeholder="Dasar I">
-        </div>
-
-        <div class="form-group">
-          <label for="dasar_2">Dasar II</label>
-          <input type="text" name="dasar_2" class="form-control" placeholder="Dasar II">
-        </div>
-
-        <div class="form-group">
-          <label for="petugas">Petugas</label>
-          <select id="pilihPetugas" class="selectpicker form-control" name="petugas[]" multiple="multiple">
-            <?php
-            tampilPetugas($koneksi, $petugas);
-            ?>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="untuk_1">Untuk I</label>
-          <input type="text" name="untuk_1" class="form-control" placeholder="Untuk I">
-        </div>
-
-        <div class="form-group">
-          <label for="untuk_2">Untuk II</label>
-          <input type="text" name="untuk_2" class="form-control" placeholder="Untuk II">
-        </div>
-
-        <div class="form-group">
-          <label for="mulai_dan_selesai">Tanggal Pelaksanaan</label>
-          <input type="text" name="mulai" class="form-control" placeholder="Tanggal Pelaksanaan">
-        </div>
-
-        <div class="form-group">
-          <label for="kota">Kota</label>
-          <input type="text" name="kota" class="form-control" placeholder="kota">
-        </div>
-
-        <div class="form-group">
-          <label for="tembusan">Tembusan</label>
-          <button class="btn btn-primary mt-2 mb-2 ml-2" type="button" onclick="tambahTembusan();return false;">Tambah Tembusan</button>
-          <button class="btn btn-primary mt-2 mb-2" onclick="hapusTembusan(); return false;">Hapus</button>
-          <div id="tembusan"></div>
-        </div> -->
-
         <div class="form-group text-right">
           <button type="submit" class="btn btn-primary mt-4 text-right ">Submit</button>
         </div>
     </form>
+    <?php
+      inputDatabase($koneksi);
+    ?>
   </body>
 </div>
 

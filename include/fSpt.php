@@ -20,8 +20,45 @@
         }
     }
 
-    function inputDatabase(){
-        
+    function inputDatabase($koneksi){
+        if(isset($_POST['nomor_surat'])){
+            //spt
+            $nomor_surat = $_POST['nomor_surat'];
+            $kode_pejabat = $_POST['kode_pejabat'];
+            $kode_masalah = $_POST['kode_masalah'];
+            $nama_instansi = $_POST['nama_instansi'];
+            $pimpinan_instansi = $_POST['pimpinan_instansi'];
+            $tanggal_terbit = $_POST['tanggal_terbit'];
+            $dasar_1 = $_POST['dasar_1'];
+            $dasar_2 = $_POST['dasar_2'];
+            $untuk_1 = $_POST['untuk_1'];
+            $untuk_2 = $_POST['untuk_2'];
+            $mulai = $_POST['mulai'];
+            $selesai = $_POST['selesai'];
+            $tempat = $_POST['tempat'];
+    
+            mysqli_query($koneksi, "INSERT INTO spt (nomor_surat, kode_pejabat, kode_masalah, penerbitan, dasar_1, dasar_2, untuk_1, untuk_2, mulai, selesai, tempat, nama_instansi, pimpinan_instansi) VALUES ('$nomor_surat', '$kode_pejabat', '$kode_masalah', '$tanggal_terbit', '$dasar_1', '$dasar_2', '$untuk_1', '$untuk_2', '$mulai', '$selesai', '$tempat', '$nama_instansi', '$pimpinan_instansi')");
+    
+            //id spt
+            $spt = mysqli_query($koneksi, "SELECT * FROM spt WHERE id_spt IN (SELECT MAX(id_spt) FROM spt)");
+            $spt_terakhir = mysqli_fetch_array($spt);
+            $id_spt = $spt_terakhir['id_spt'];
+
+            //menimbang
+            foreach ($_POST['menimbang'] as $isi){
+                mysqli_query($koneksi, "INSERT INTO menimbang_spt (id_spt, isi) VALUES ('$id_spt', '$isi')");
+            }
+    
+            //petugas
+            foreach ($_POST['petugas'] as $nip){
+                mysqli_query($koneksi, "INSERT INTO petugas_spt (id_spt, nip) VALUES ('$id_spt', '$nip')");
+            }
+    
+            //tembusan
+            foreach ($_POST['tembusan'] as $isi){
+                mysqli_query($koneksi, "INSERT INTO tembusan_spt (id_spt, isi) VALUES ('$id_spt', '$isi')");
+            }
+        } 
     }
 
 ?>
