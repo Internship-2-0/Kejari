@@ -106,11 +106,12 @@
       <?php 
       $noPetugas = 0;
         while($data_petugas = mysqli_fetch_array($petugas)){
-          $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM petugas WHERE nip = '$data_petugas['nip']"));
+          $nip = $data_petugas['nip'];
+          $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM petugas WHERE nip = '$nip'"));
           ?> <tr>
             <td><?php if($noPetugas == 0){
               echo "Petugas : ";
-            } $noPetugas ?></td>
+            } $noPetugas++; ?></td>
               <td>
             <?php echo $noPetugas . ". "?>
             </td>
