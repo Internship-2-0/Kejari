@@ -60,7 +60,7 @@
             }
             
             echo "<script> alert('Pembuatan Surat Sukses') </script>";
-            echo "<meta http-equiv='refresh' content='1; url=../kejari/template_surat/tSpt.php?id=" . $id_spt . "'>";
+            echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tSpt.php?id=" . $id_spt . "'>";
         } 
     }
 

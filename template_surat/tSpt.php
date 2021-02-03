@@ -57,23 +57,17 @@
     </center>
 
     <table class="size11">
-      <!-- <tr>
-        <td>Menimbang : </td>
-        <td></td>
-      </tr> -->
       <?php 
         $noMenimbang = 0;
         while($data_menimbang = mysqli_fetch_array($menimbang)){
           ?> <tr>
-          
-          <td><?php if($no==0){
+          <td><?php if($noMenimbang==0){
             echo "Menimbang : ";
-            } $menimbang++;?></td>
-            <td><?php echo $no . ". " ?></td>
+            } $noMenimbang++;?></td>
+            <td><?php echo $noMenimbang . ". " ?></td>
           <td><?php echo $data_menimbang['isi']; ?></td>
           </tr> <?php
         }
-
       ?>
     </table>
     <br>
@@ -98,11 +92,6 @@
     <br>
 
     <table class="size11">
-      <!-- <tr>
-        <td>Kepada : </td>
-        <td></td>
-        <td></td>
-      </tr> -->
       <?php 
       $noPetugas = 0;
         while($data_petugas = mysqli_fetch_array($petugas)){
@@ -143,8 +132,8 @@
     <table class="size11">
       <tr>
         <td>Untuk : </td>
-        <td></td>
-        <td></td>
+        <td><?php echo $data_spt['untuk_1'] ?></td>
+        <td><?php echo $data_spt['untuk_2'] ?></td>
       </tr>
     </table>
   </div>
@@ -152,9 +141,9 @@
 
   <div class="right size11">
     <span>
-      Dikeluarkan di : (Kota)
+      Dikeluarkan di : <?php echo $data_spt['tempat'] ?>
       <br>
-      Pada tanggal : (Tgl terbit)
+      Pada tanggal : <?php echo date('d-m-Y', strtotime($data_spt['penerbitan'])); ?>
     </span>
     <br><br>
     <span><b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG,</b></span>
@@ -166,12 +155,19 @@
   <br>
 
   <div>
-    <span>Tembusan : </span>
     <table>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
+    <?php 
+        $noTembusan = 0;
+        while($data_tembusan = mysqli_fetch_array($tembusan)){
+          ?> <tr>
+          <td><?php if($noTembusan==0){
+            echo "Tembusan : ";
+            } $noTembusan++;?></td>
+            <td><?php echo $noTembusan . ". " ?></td>
+          <td><?php echo $data_tembusan['isi']; ?></td>
+          </tr> <?php
+        }
+      ?>
     </table>
   </div>
 
@@ -183,3 +179,4 @@
 <script>
   window.print();
 </script>
+<meta http-equiv="refresh" content="3;url=../index.php">
