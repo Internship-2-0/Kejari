@@ -15,6 +15,11 @@
   text-align: center;
 }
 
+.justify{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .right{
   text-align: right;
 }
@@ -43,4 +48,6 @@
   font-size: 19pt;
 }
 
-
+tr{
+  vertical-align: text-top;
+}
