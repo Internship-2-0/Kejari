@@ -1,12 +1,8 @@
 <?php
-include "../Kejari/include/fSpt.php";
+  include "../Kejari/include/fSpt.php";
 ?>
 <html lang="en">
 <div class="ml-4">
-
-  <head>
-
-  </head>
 
   <body>
     <h2 class="tittle text-center mt-4 mb-4">Form Surat Perintah Tugas</h2>
@@ -25,37 +21,6 @@ include "../Kejari/include/fSpt.php";
               <input type="text" name="kode_masalah" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode masalah">
             </div>
           </div>
-          <!-- <div class="form-group">
-            <label for="nama_instansi">Nama Instansi</label>
-            <input type="text" name="nama_instansi" class="form-control" placeholder="contoh: Kejaksaan Agung">
-          </div>
-          <div class="form-group">
-            <label for="pimpinan_instansi">Pimpinan Instansi</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="pimpinan_instansi" id="pimpinan_instansi" value="JAKSA AGUNG MUDA INTELIJEN" checked>
-              <label class="form-check-label" for="pimpinan_instansi">
-                JAKSA AGUNG MUDA INTELIJEN
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="pimpinan_instansi" id="pimpinan_instansi2" value="KEPALA KEJAKSAAN TINGGI">
-              <label class="form-check-label" for="pimpinan_instansi">
-                KEPALA KEJAKSAAN TINGGI
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="pimpinan_instansi" id="pimpinan_instansi3" value="KEPALA KEJAKSAAN NEGERI">
-              <label class="form-check-label" for="pimpinan_instansi">
-                KEPALA KEJAKSAAN NEGERI
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="pimpinan_instansi" id="pimpinan_instansi4" value="KEPALA CABANG KEJAKSAAN NEGERI">
-              <label class="form-check-label" for="pimpinan_instansi">
-                KEPALA CABANG KEJAKSAAN NEGERI
-              </label>
-            </div>
-          </div> -->
           <div class="form-group">
             <label for="tanggal_terbit">Tanggal Penerbitan Surat</label>
             <div class="form-inline">

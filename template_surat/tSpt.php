@@ -50,7 +50,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
     <center>
       <span class="size12"><b><u>SURAT PERINTAH TUGAS</u></b></span>
       <br>
-      NOMOR: SP.TUG - <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m-Y', strtotime($data_spt['penerbitan'])); ?>
+      NOMOR: SP.TUG - <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m', strtotime($data_spt['penerbitan'])). "/" . date('Y', strtotime($data_spt['penerbitan'])); ?>
       <br><br>
       <b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG</b></span>
       <br><br>

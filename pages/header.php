@@ -27,19 +27,8 @@ if (!isset($_SESSION['admin'])) {
 
 <body>
 
-	<!-- <div class="sidenav">
-		<pre class="logo"><center><b>KEJARI</b></center></pre>
-		<a href="index.php">Home</a>
-		<a href="index.php?halaman=logout">Logout</a>
-	</div> -->
-
 	<nav class="navbar fixed-top navbar-light bg-light">
 		<a class="navbar-brand" href="#">KEJARI</a>
-		<form class="form-inline my-2 my-lg-0 ml-auto">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
-
 		<div class="icon ml-4">
 			<h5>
 				<a href="index.php?halaman=logout"><i class="fas fa-sign-out-alt mr-3" data-toogle="tooltip" title="Sign-out"></i></a>
@@ -55,7 +44,7 @@ if (!isset($_SESSION['admin'])) {
 					<hr class="bg-secondary">
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-white" href="index.php?halaman=data_pegawai"><i class="fas fa-user-edit mr-2"></i>Data_Pegawai</a>
+					<a class="nav-link text-white" href="index.php?halaman=data_pegawai"><i class="fas fa-user-edit mr-2"></i>Data Pegawai</a>
 					<hr class="bg-secondary">
 				</li>
 				<li class="nav-item">

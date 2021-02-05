@@ -1,15 +1,11 @@
 <?php
-include "include/koneksi.php";
-
-// $id_spt = $_GET['id'];
-$data_spt = mysqli_query($koneksi, "SELECT * FROM spt");
-
+  include "include/fHistory.php";
 ?>
 
 <html>
 
 <div class="container">
-  <h2 class="tittle text-center mt-4 mb-4">Riwayat Surat</h2>
+  <h2 class="tittle mt-4 mb-4 mml-4">Riwayat Surat</h2>
 
   <table class="table">
     <thead>
@@ -20,15 +16,18 @@ $data_spt = mysqli_query($koneksi, "SELECT * FROM spt");
     </thead>
     <tbody>
       <?php
-      while ($nomor_tgl_surat = mysqli_fetch_array($data_spt)) {
+      while ($data_spt = mysqli_fetch_array($spt)) {
+      $link = $data_spt['id_spt'];
       ?>
-        <tr>
-          <td>SP.TUG - <?PHP echo $nomor_tgl_surat['nomor_surat'] . "/" . $nomor_tgl_surat['kode_pejabat'] . "/" . $nomor_tgl_surat['kode_masalah'] . "/" . date('mY', strtotime($nomor_tgl_surat['penerbitan'])); ?></td>
-          <td><?php echo $nomor_tgl_surat['penerbitan'] ?></td>
-          <td>
-            <button class="btn btn-primary">SHOW</button>
-          </td>
-        </tr>
+      <tr>
+        <td>SP.TUG -
+          <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m', strtotime($data_spt['penerbitan'])) . "/" . date('Y', strtotime($data_spt['penerbitan'])); ?>
+        </td>
+        <td><?php echo $data_spt['penerbitan'] ?></td>
+        <td>
+          <a class="btn btn-primary" href="template_surat/tSpt.php?id=<?php echo $link; ?>">SHOW</a>
+        </td>
+      </tr>
       <?php } ?>
 
     </tbody>
