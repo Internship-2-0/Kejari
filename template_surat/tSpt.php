@@ -208,4 +208,4 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
 <script>
   window.print();
 </script>
-<meta http-equiv="refresh" content="3;url=../index.php">
+<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
