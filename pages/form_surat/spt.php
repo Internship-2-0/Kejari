@@ -7,7 +7,6 @@
   <body>
     <h2 class="tittle text-center mt-4 mb-4">Form Surat Perintah Tugas</h2>
     <form method="post">
-
       <div class="container">
         <div class="box shadow">
           <h5><b>KOP Surat</b></h5>

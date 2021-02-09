@@ -50,7 +50,8 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
     <center>
       <span class="size12"><b><u>SURAT PERINTAH TUGAS</u></b></span>
       <br>
-      NOMOR: SP.TUG - <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m', strtotime($data_spt['penerbitan'])). "/" . date('Y', strtotime($data_spt['penerbitan'])); ?>
+      NOMOR: SP.TUG -
+      <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m', strtotime($data_spt['penerbitan'])). "/" . date('Y', strtotime($data_spt['penerbitan'])); ?>
       <br><br>
       <b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG</b></span>
       <br><br>
@@ -61,13 +62,13 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       $noMenimbang = 0;
       while ($data_menimbang = mysqli_fetch_array($menimbang)) {
       ?> <tr>
-          <td><?php if ($noMenimbang == 0) {
+        <td><?php if ($noMenimbang == 0) {
                 echo "Menimbang : ";
               }
               $noMenimbang++; ?></td>
-          <td><?php echo $noMenimbang . ". " ?></td>
-          <td><?php echo $data_menimbang['isi']; ?></td>
-        </tr> <?php
+        <td><?php echo $noMenimbang . ". " ?></td>
+        <td><?php echo $data_menimbang['isi']; ?></td>
+      </tr> <?php
             }
               ?>
     </table>
@@ -77,12 +78,14 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       <tr class="">
         <td>Dasar: </td>
         <td>1. </td>
-        <td>Undang-Undang Nomor 16 Tahun 2004 tentang Kejaksaan Republik Indonesia (Lembaran Negara Repubik Indonesia Tahun 2004 Nomor 67, Tambahan Lembaran Negara Republik Indonesia Nomor 4401);</td>
+        <td>Undang-Undang Nomor 16 Tahun 2004 tentang Kejaksaan Republik Indonesia (Lembaran Negara Repubik Indonesia
+          Tahun 2004 Nomor 67, Tambahan Lembaran Negara Republik Indonesia Nomor 4401);</td>
       </tr>
       <tr>
         <td></td>
         <td>2. </td>
-        <td>Undang-Undang Nomor 17 Tahun 2011 Tentang Intelijen Negara (Lembaran Negara Republik Indonesia Tahun 2011 Nomor 105, Tambahan Lembaran Negara Republik Indonesia Nomor 5249);</td>
+        <td>Undang-Undang Nomor 17 Tahun 2011 Tentang Intelijen Negara (Lembaran Negara Republik Indonesia Tahun 2011
+          Nomor 105, Tambahan Lembaran Negara Republik Indonesia Nomor 5249);</td>
       </tr>
       <tr>
         <td></td>
@@ -92,12 +95,16 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       <tr>
         <td></td>
         <td>4. </td>
-        <td>Peraturan Presiden Republik Indonesia Nomor 38 Tahun 2010 tentang Organisasi dan Tata Kerja Kejaksaan Republik Indonesia sebagaimana telah diubah dengan Peraturan Presiden Republik Indonesia Nomor 29 Tahun 2016 tentang Perubahan atas Peraturan Presiden Republik Indonesia Nomor 38 Tahun 2010 tanggal 15 Juni 2010 tentang Organisasi dan Tata Kerja Kejaksaan Republik Indonesia;</td>
+        <td>Peraturan Presiden Republik Indonesia Nomor 38 Tahun 2010 tentang Organisasi dan Tata Kerja Kejaksaan
+          Republik Indonesia sebagaimana telah diubah dengan Peraturan Presiden Republik Indonesia Nomor 29 Tahun 2016
+          tentang Perubahan atas Peraturan Presiden Republik Indonesia Nomor 38 Tahun 2010 tanggal 15 Juni 2010 tentang
+          Organisasi dan Tata Kerja Kejaksaan Republik Indonesia;</td>
       </tr>
       <tr>
         <td></td>
         <td>5. </td>
-        <td>Peraturan Jaksa Agung Republik Indonesia Nomor : PER-006/A/JA/07/2017 tanggal 20 Juli 2017 tentang Organisasi dan Tata Kerja Kejaksaan Republik Indonesia;</td>
+        <td>Peraturan Jaksa Agung Republik Indonesia Nomor : PER-006/A/JA/07/2017 tanggal 20 Juli 2017 tentang
+          Organisasi dan Tata Kerja Kejaksaan Republik Indonesia;</td>
       </tr>
       <tr>
         <td></td>
@@ -122,36 +129,36 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       $noPetugas = 0;
       while ($data_petugas = mysqli_fetch_array($petugas)) {
         $nip = $data_petugas['nip'];
-        $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM petugas WHERE nip = '$nip'"));
+        $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM pegawai WHERE nip = '$nip'"));
       ?> <tr>
-          <td><?php if ($noPetugas == 0) {
+        <td><?php if ($noPetugas == 0) {
                 echo "Petugas : ";
               }
               $noPetugas++; ?></td>
-          <td>
-            <?php echo $noPetugas . ". " ?>
-          </td>
-          <td>Nama</td>
-          <td> <?php echo ": " . $data['nama'] ?></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Pangkat</td>
-          <td><?php echo ": " . $data['pangkat'] ?></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>NIP</td>
-          <td><?php echo ": " . $data['nip'] ?></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Jabatan</td>
-          <td><?php echo ": " . $data['jabatan'] ?></td>
-        </tr>
+        <td>
+          <?php echo $noPetugas . ". " ?>
+        </td>
+        <td>Nama</td>
+        <td> <?php echo ": " . $data['nama'] ?></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>Pangkat</td>
+        <td><?php echo ": " . $data['pangkat'] ?></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>NIP</td>
+        <td><?php echo ": " . $data['nip'] ?></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>Jabatan</td>
+        <td><?php echo ": " . $data['jabatan'] ?></td>
+      </tr>
       <?php }
       ?>
     </table>
@@ -187,14 +194,14 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       $noTembusan = 0;
       while ($data_tembusan = mysqli_fetch_array($tembusan)) {
       ?>
-        <tr>
-          <td><?php if ($noTembusan == 0) {
+      <tr>
+        <td><?php if ($noTembusan == 0) {
                 echo "Tembusan : ";
               }
               $noTembusan++; ?></td>
-          <td><?php echo $noTembusan . ". " ?></td>
-          <td><?php echo $data_tembusan['isi']; ?></td>
-        </tr> <?php
+        <td><?php echo $noTembusan . ". " ?></td>
+        <td><?php echo $data_tembusan['isi']; ?></td>
+      </tr> <?php
             }
               ?>
     </table>

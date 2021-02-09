@@ -8,7 +8,7 @@
     include "koneksi.php";
     
     //data petugas
-    $petugas = mysqli_query($koneksi,"SELECT * FROM `petugas` ORDER BY `petugas`.`nip` ASC");
+    $petugas = mysqli_query($koneksi,"SELECT * FROM `pegawai` ORDER BY `pegawai`.`nip` ASC");
 
     //tampil petugas
     function tampilPetugas($koneksi, $petugas){
