@@ -19,6 +19,8 @@
         include 'pages/form_surat/spt.php';
       } else if ($_GET['halaman'] == 'history') {
         include 'pages/history.php';
+      } else if ($_GET['halaman'] == 'tambah_pegawai') {
+        include 'pages/tambah_pegawai.php';
       }
     } else {
       include 'pages/home.php';
