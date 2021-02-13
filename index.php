@@ -6,7 +6,7 @@
 
 <body>
 
-  <div class="col-md-10 mt-2 pr-3 pt-4">
+  <div class="col-md-10 mt-2 pt-4">
     <?php
     if (isset($_GET['halaman'])) {
       if ($_GET['halaman'] == 'history') {

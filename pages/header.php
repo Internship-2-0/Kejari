@@ -37,7 +37,7 @@ if (!isset($_SESSION['admin'])) {
 	</nav>
 
 	<div class="row no-gutters mt-5 vh-100">
-		<div class="col-md-2 bg-dark mt-2 pr-3 pt-4">
+		<div class="col-md-2 bg-dark mt-2 pt-4">
 			<ul class="nav flex-column ml-3 mb-5">
 				<li class="nav-item">
 					<a class="nav-link active text-white" href="index.php"><i class="fas fa-home mr-2"></i>Dashboard</a>

@@ -1,7 +1,8 @@
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
-  background-color: #f5f5f5 !important;;
+  background-color: #f5f5f5 !important;
+  ;
 }
 
 /*.tab {
@@ -13,198 +14,208 @@ overflow                  : hidden;
 }*/
 
 .sidenav {
-height                    : 100%;
-width                     : 200px;
-position                  : fixed;
-z-index                   : 1;
-top                       : 0;
-left                      : 0;
-background-color          : #f3f3f3;
-overflow-x                : hidden;
-padding-top               : 0px;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f3f3f3;
+  overflow-x: hidden;
+  padding-top: 0px;
 }
 
 .logo {
-/*padding: 6px 8px 6px 16px;*/
-font-size                 : 30px;
+  /*padding: 6px 8px 6px 16px;*/
+  font-size: 30px;
 }
 
 .sidenav a {
-padding                   : 6px 8px 20px 16px;
-text-decoration           : none;
-font-size                 : 20px;
-color                     : #818181;
-display                   : block;
+  padding: 6px 8px 20px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
 }
 
 .sidenav a:hover {
-  color                   : #f1f1f1;
+  color: #f1f1f1;
 }
 
 .main {
- margin-left              : 200px; /* Same as the width of the sidenav */
-  padding                 : 0px 10px;
+  margin-left: 200px;
+  /* Same as the width of the sidenav */
+  padding: 0px 10px;
 }
 
 .text-title {
-font-size                 : 28px; /* Increased text to enable scrolling */
-text-align                : center;
+  font-size: 28px;
+  /* Increased text to enable scrolling */
+  text-align: center;
 }
 
 @media screen and (max-height: 450px) {
-.sidenav {padding-top    : 15px;}
-.sidenav a {font-size    : 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
 
 /*Tabel*/
 .table {
-border-collapse           : collapse;
-width                     : 100%;
-border                    : 1px;
-} 
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px;
+}
 
-.table, td, th {
-border                    : 2px solid black;
-border-color              : #f3f3f3;
-padding                   : 5px;
-text-align                : center;
+.table,
+td,
+th {
+  border: 2px solid black;
+  border-color: #f3f3f3;
+  padding: 5px;
+  text-align: center;
 }
 
 th {
-height                    : 50px;
+  height: 50px;
 }
 
 /*Button*/
 .btn {
-font-size                 : 14px;
-color                     : white;
-text-decoration           : none;
-padding                   : 7px 17px;
-display                   : inline-block;
-border-radius             : 6px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  padding: 7px 17px;
+  display: inline-block;
+  border-radius: 6px;
 
 }
 
 .btn-blue {
-background-color          : #008CBA;
+  background-color: #008CBA;
 }
 
 .btn-blue:hover {
-background-color          : #0b5394;
+  background-color: #0b5394;
 }
 
 .btn-red {
-background-color          : #f44336;
+  background-color: #f44336;
 }
 
 .btn-red:hover {
-background-color          : #cc0000;
+  background-color: #cc0000;
 }
 
 .btn-green {
-background-color          : #4caf50;
+  background-color: #4caf50;
 }
 
 .btn-green:hover {
-background-color          : #38761d;
+  background-color: #38761d;
 }
 
 .btn-yellow {
-background-color          : #f39c12;
+  background-color: #f39c12;
 }
 
 .btn-yellow:hover {
-background-color          : #f1c323;
+  background-color: #f1c323;
 }
 
 /*FORM*/
 .form-input {
-width                     : 100%;
-padding                   : 12px 20px;
-margin                    : 8px 0;
-display                   : inline-block;
-border                    : 1px solid #ccc;
-border-radius             : 4px;
-box-sizing                : border-box;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 /*LOGIN*/
 
-.tulisan_login{
-text-align                : center;
-/*membuat semua huruf menjadi kapital*/
-text-transform            : uppercase;
+.tulisan_login {
+  text-align: center;
+  /*membuat semua huruf menjadi kapital*/
+  text-transform: uppercase;
 }
 
-.kotak_login{
-width                     : 350px;
-background                : white;
-/*meletakkan form ke tengah*/
-margin                    : 80px auto;
-padding                   : 30px 20px;
+.kotak_login {
+  width: 350px;
+  background: white;
+  /*meletakkan form ke tengah*/
+  margin: 80px auto;
+  padding: 30px 20px;
 }
 
 /* label{
 font-size                 : 11pt;
 } */
 
-.form_login{
-/*membuat lebar form penuh*/
-box-sizing                : border-box;
-width                     : 100%;
-padding                   : 10px;
-font-size                 : 11pt;
-margin-bottom             : 20px;
+.form_login {
+  /*membuat lebar form penuh*/
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  font-size: 11pt;
+  margin-bottom: 20px;
 }
 
-.tombol_login{
-background                : #46de4b;
-color                     : white;
-font-size                 : 11pt;
-width                     : 100%;
-border                    : none;
-border-radius             : 3px;
-padding                   : 10px 20px;
+.tombol_login {
+  background: #46de4b;
+  color: white;
+  font-size: 11pt;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
 }
 
-.link{
-color                     : #232323;
-text-decoration           : none;
-font-size                 : 10pt;
+.link {
+  color: #232323;
+  text-decoration: none;
+  font-size: 10pt;
 }
 
 .nav-link:hover {
-background-color          : grey;
+  background-color: grey;
 }
 
 /* Style the caret/arrow */
 .caret {
-cursor                    : pointer;
-user-select               : none; /* Prevent text selection */
+  cursor: pointer;
+  user-select: none;
+  /* Prevent text selection */
 }
 
 /* Create the caret/arrow with a unicode, and style it */
 .caret::after {
-content                   : "\25B6";
-color                     : white;
-display                   : inline-block;
-margin-right              : 6px;
+  content: "\25B6";
+  color: white;
+  display: inline-block;
+  margin-right: 6px;
 }
 
 /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
 .caret-down::before {
-transform                 : rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /* Hide the nested list */
 .nested {
-display                   : none;
+  display: none;
 }
 
 /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
 .active {
-display                   : block;
+  display: block;
 }
 
 /* .container {
@@ -215,23 +226,24 @@ padding                   : 40px;
 } */
 
 .button {
-width                     : 55%;
+  width: 55%;
 }
 
 
 
 
 .box {
-padding: 2rem 3rem 3rem 3rem;
-background-color: white;
-margin: auto;
+  padding: 2rem 2rem 3rem 2rem;
+  background-color: white;
+  border-radius: 5px;
+  margin: auto 1.5rem auto 1.5rem;
 }
 
 .shadow {
-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27) !important;
 }
 
-.box-petugas{
-padding: 32px;
-border: 1px solid #d4d4d4;
+.box-petugas {
+  padding: 32px;
+  border: 1px solid #d4d4d4;
 }

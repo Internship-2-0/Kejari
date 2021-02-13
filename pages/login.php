@@ -22,27 +22,26 @@ session_start();
 </head>
 
 <body>
-  <form method="POST">
-    <div class="container">
-      <div class="box shadow">
-        <h2 class="text-center">Login Page</h2>
-        <div class="form-group">
-          <label>Username</label>
-          <input type="text" name="username" class="form-control" placeholder="Masukkan Username">
+  <div class="login-box shadow-box">
+    <div class="login-box-body">
+      <h2 class="login-box-msg">Login Page</h2>
+      <form method="POST">
+        <div class="form-group has-feedback">
+          <input type="text" name="username" class="form-control" placeholder="Username">
         </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" name="password" class="form-control" placeholder="Masukkan Password">
+        <div class="form-group has-feedback">
+          <input type="password" name="password" class="form-control" placeholder="Password">
         </div>
         <div class="text-right">
           <button type="submit" class="btn btn-primary mt-4" name="login">Login</button>
         </div>
-      </div>
+      </form>
     </div>
-  </form>
+  </div>
+
 
   <?php
-    cekLogin($koneksi);
+  cekLogin($koneksi);
   ?>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

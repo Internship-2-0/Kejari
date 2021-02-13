@@ -3,30 +3,30 @@ include "include/fData_pegawai.php";
 ?>
 
 <html>
-<h2 class="mt-4 mb-4 text-center">Daftar Pegawai</h2>
-<div class="container box shadow" ">
+<div class="container-fluid">
+    <h2 class="mt-4 mb-4 text-center">Daftar Pegawai</h2>
+    <div class="box shadow">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>NIP</th>
+                    <th>NAMA</th>
+                    <th>PANGKAT</th>
+                    <th>JABATAN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php tampilPegawai($koneksi) ?>
+            </tbody>
+        </table>
+    </div>
+    <br>
+
     <div class=" text-right pegawai">
-    <a href="index.php?halaman=tambah_pegawai" class="btn btn-primary">Tambah Pegawai</a>
-</div>
-<br><br>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>NIP</th>
-            <th>NAMA</th>
-            <th>PANGKAT</th>
-            <th>JABATAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php tampilPegawai($koneksi) ?>
-    </tbody>
-</table>
-
-</div>
-
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <a href="index.php?halaman=tambah_pegawai" class="btn btn-primary">Tambah Pegawai</a>
+    </div>
+    <br><br>
+    <!-- <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,6 +62,7 @@ include "include/fData_pegawai.php";
             </div>
         </div>
     </div>
+</div> -->
 </div>
 
 </html>
