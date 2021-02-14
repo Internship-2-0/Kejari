@@ -12,45 +12,40 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Adada.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/tSpt.css">
+  <title>Document</title>
 </head>
-<body>
-            <div class="right">
-                <span class="size12"><b>IN.1</b></span>
-                <br>
-                <span class="size10">Copy ke : </span>
-                <br>
-                <span class="size10">Dari : </span>
-            </div>
-	<center>
-		<table>
-			<tr>
-				<td><img src="../img/Logo.png" width="90" height="90"></td>
-				<td>
-            <div class="height center">
-                <b>
-                    <span class="size12">KEJAKSAAN REPUBLIK INDONESIA</span>
-                    <br>
-                    <span class="size15">KEJAKSAAN TINGGI JAWA TENGAH</span>
-                    <br>
-                    <span class="size19">KEJAKSAAN NEGERI KOTA SEMARANG</span>
-                </b>
-                    <br>
-                    <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
-            </div>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="100"><hr></td>
-			</tr>
-      </table>
-           
+
+<body class="margin_surat fonts justify">
+  <div class="height center">
+    <b>
+      <span class="size12">KEJAKSAAN REPUBLIK INDONESIA</span>
+      <br>
+      <span class="size15">KEJAKSAAN TINGGI JAWA TENGAH</span>
+      <br>
+      <span class="size19">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+    </b>
+    <br>
+    <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145
+      <br>
+      Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
+    <hr>
+  </div>
+
+  <div class="right">
+    <span class="size12"><b>IN.1</b></span>
+    <br>
+    <span class="size10">Copy ke : </span>
+    <br>
+    <span class="size10">Dari : </span>
+  </div>
   <br><br>
+
   <div>
     <center>
       <span class="size12"><b><u>SURAT PERINTAH TUGAS</u></b></span>
@@ -211,5 +206,13 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
               ?>
     </table>
   </div>
+
+
 </body>
+
 </html>
+
+<script>
+  window.print();
+</script>
+<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
