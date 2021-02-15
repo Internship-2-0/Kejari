@@ -12,7 +12,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
 ?>
 
 <!DOCTYPE html>
-<html>
+<html class="margin_surat">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
