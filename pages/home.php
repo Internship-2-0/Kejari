@@ -7,6 +7,7 @@
     </button>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="index.php?halaman=spt">Surat Perintah Tugas</a>
+      <a class="dropdown-item" href="index.php?halaman=sppps">Surat Perintah Pengamanan Pembangunan Strategis</a>
     </div>
   </div>
 </div>

@@ -21,6 +21,8 @@
         include 'pages/history.php';
       } else if ($_GET['halaman'] == 'tambah_pegawai') {
         include 'pages/tambah_pegawai.php';
+      } else if ($_GET['halaman'] == 'sppps') {
+        include 'pages/form_surat/sppps.php';
       }
     } else {
       include 'pages/home.php';
