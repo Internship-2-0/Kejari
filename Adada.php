@@ -1,36 +1,16 @@
-<?php
-
-include "../include/koneksi.php";
-
-$id_spt = $_GET['id'];
-
-$data_spt = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM spt WHERE id_spt = '$id_spt'"));
-$petugas = mysqli_query($koneksi, "SELECT * FROM petugas_spt WHERE id_spt = '$id_spt'");
-$menimbang = mysqli_query($koneksi, "SELECT * FROM menimbang_spt WHERE id_spt = '$id_spt'");
-$tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$id_spt'");
-
-?>
-
 <!DOCTYPE html>
-<html class="margin_surat">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Adada.css">
+    <link rel="stylesheet" href="Adada.css">
     <title>Document</title>
 </head>
 <body>
-            <div class="right">
-                <span class="size12"><b>IN.1</b></span>
-                <br>
-                <span class="size10">Copy ke : </span>
-                <br>
-                <span class="size10">Dari : </span>
-            </div>
 	<center>
 		<table>
 			<tr>
-				<td><img src="../img/Logo.png" width="90" height="90"></td>
+				<td><img src="img/Logo.png" width="90" height="90"></td>
 				<td>
             <div class="height center">
                 <b>
@@ -46,11 +26,17 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
 				</td>
 			</tr>
 			<tr>
-				<td colspan="100"><hr></td>
+				<td colspan="2"><hr></td>
 			</tr>
-      </table>
-           
+            <div class="right">
+                <span class="size12"><b>IN.1</b></span>
+                <br>
+                <span class="size10">Copy ke : </span>
+                <br>
+                <span class="size10">Dari : </span>
+            </div>
   <br><br>
+
   <div>
     <center>
       <span class="size12"><b><u>SURAT PERINTAH TUGAS</u></b></span>
@@ -79,7 +65,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
     </table>
     <br>
 
-    <table class="size11" style="  text-align: justify; text-justify: inter-word;">
+    <table class="size11">
       <tr class="">
         <td>Dasar: </td>
         <td>1. </td>
@@ -213,9 +199,3 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
   </div>
 </body>
 </html>
-
-
-<script>
-  window.print();
-</script>
-<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
