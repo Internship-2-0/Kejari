@@ -79,7 +79,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
     </table>
     <br>
 
-    <table class="size11">
+    <table class="size11" style="text-align: justify; text-justify: inter-word;">
       <tr class="">
         <td>Dasar: </td>
         <td>1. </td>
