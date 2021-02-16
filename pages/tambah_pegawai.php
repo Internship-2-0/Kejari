@@ -38,7 +38,7 @@ if (isset($_POST['save'])) {
     $pangkat_pegawai = $_POST['pangkat_pegawai'];
     $jabatan_pegawai = $_POST['jabatan_pegawai'];
 
-    mysqli_query($koneksi, "INSERT INTO pegawai (nip, nama, pangkat, jabatan) VALUES ('$nama_pegawai', '$nip_pegawai', '$pangkat_pegawai', '$jabatan_pegawai')");
+    mysqli_query($koneksi, "INSERT INTO pegawai (nip, nama, pangkat, jabatan) VALUES ('$nip_pegawai', '$nama_pegawai', '$pangkat_pegawai', '$jabatan_pegawai')");
 
     echo "<br><div class='alert alert-success text-center'> Data berhasil disimpan </div>";
     echo "<meta http-equiv='refresh' content='1;url=index.php?halaman=data_pegawai'>";
