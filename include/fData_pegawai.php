@@ -1,45 +1,65 @@
 <?php
 
-    include "include/koneksi.php";
+include "include/koneksi.php";
 
-    function tampilPegawai($koneksi){
-        $pegawai = mysqli_query($koneksi, "SELECT * FROM pegawai");
-        while ($data_pegawai = mysqli_fetch_array($pegawai)) {
-        ?>
+function tampilPegawai($koneksi)
+{
+    $pegawai = mysqli_query($koneksi, "SELECT * FROM pegawai");
+    while ($data_pegawai = mysqli_fetch_array($pegawai)) {
+?>
         <tr>
             <td><?php echo $data_pegawai['nip'] ?></td>
             <td><?php echo $data_pegawai['nama'] ?></td>
             <td><?php echo $data_pegawai['pangkat'] ?></td>
             <td><?php echo $data_pegawai['jabatan'] ?></td>
         </tr>
-        <?php
-            }
+<?php
+    }
+}
+
+if (isset($_POST['submitFrm']) && !empty($_POST['nama']) && !empty($_POST['nip']) && !empty($_POST['pangkat']) && !empty($_POST['jabatan'])) {
+    $nip = $_POST['nip'];
+    $nama = $_POST['nama'];
+    $pangkat = $_POST['pangkat'];
+    $jabatan = $_POST['jabatan'];
+    $input = mysqli_query($koneksi, "INSERT INTO pegawai VALUE ('$nip','$nama','$pangkat','$jabatan')");
+    if ($input) {
+        $status = 'ok';
+    } else {
+        $status = 'err';
     }
 
-        if(isset($_POST['submitFrm']) && !empty($_POST['nama']) && !empty($_POST['nip']) && !empty($_POST['pangkat']) && !empty($_POST['jabatan'])){
-                $nip = $_POST['nip'];
-                $nama = $_POST['nama'];
-                $pangkat = $_POST['pangkat'];
-                $jabatan = $_POST['jabatan'];
-                $input = mysqli_query($koneksi, "INSERT INTO pegawai VALUE ('$nip','$nama','$pangkat','$jabatan')");
-                if ($input){
-                    $status = 'ok';
-                } else {
-                    $status = 'err';
-                }
+    echo $status;
+    die;
+}
 
-                echo $status; die;
-        }   
-  
+// Fungsi Input Database
+function inputDatabase($koneksi)
+{
+    if (isset($_POST['save'])) {
+        //spt
+        $nama_pegawai = $_POST['nama_pegawai'];
+        $nip_pegawai = $_POST['nip_pegawai'];
+        $pangkat_pegawai = $_POST['pangkat_pegawai'];
+        $jabatan_pegawai = $_POST['jabatan_pegawai'];
+
+        mysqli_query($koneksi, "INSERT INTO pegawai (nip, nama, pangkat, jabatan) VALUES ('$nama_pegawai', '$nip_pegawai', '$pangkat_pegawai', '$jabatan_pegawai')");
+
+        echo "<br><div class='alert alert-success text-center'> Data berhasil disimpan </div>";
+        echo "<meta http-equiv='refresh' content='1;url=index.php?halaman=data_pegawai'>";
+    }
+}
+
 ?>
 
+
 <script lang="javascript">
-$(document).ready(function(){
-    $("#formPegawai").submit(function(event){
-        submitForm();
-        return false;
+    $(document).ready(function() {
+        $("#formPegawai").submit(function(event) {
+            submitForm();
+            return false;
+        });
     });
-});
 
     function submitForm() {
         var nama = $('#nama').val();
@@ -68,11 +88,11 @@ $(document).ready(function(){
                 url: 'fData_pegawai.php',
                 cache: false,
                 data: $('form#formPegawai').serialize(),
-                success: function(response){
+                success: function(response) {
                     $("#pegawai").html(response)
                     $("#pegawai-modal").modal('hide');
                 },
-                error: function(){
+                error: function() {
                     alert("error");
                 }
             });

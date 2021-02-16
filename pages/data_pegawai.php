@@ -67,19 +67,6 @@ include "include/fData_pegawai.php";
 
 </html>
 
-
 <?php
-if (isset($_POST['save'])) {
-    //spt
-    $nama_pegawai = $_POST['nama_pegawai'];
-    $nip_pegawai = $_POST['nip_pegawai'];
-    $pangkat_pegawai = $_POST['pangkat_pegawai'];
-    $jabatan_pegawai = $_POST['jabatan_pegawai'];
-
-    mysqli_query($koneksi, "INSERT INTO pegawai (nip, nama, pangkat, jabatan) VALUES ('$nama_pegawai', '$nip_pegawai', '$pangkat_peawai', '$jabatan_pegawai')");
-
-    echo "<br><div class='alert alert-success text-center'> Data berhasil disimpan </div>";
-    echo "<meta http-equiv='refresh' content='1;url=index.php?halaman=data_pegawai'>";
-}
-
+inputDatabase($koneksi);
 ?>
