@@ -16,24 +16,19 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Adada.css">
+    <!-- <link rel="stylesheet" href="../css/tSpt.css"> -->
     <title>Document</title>
 </head>
 <body>
-            <div class="right">
-                <span class="size12"><b>IN.1</b></span>
-                <br>
-                <span class="size10">Copy ke : </span>
-                <br>
-                <span class="size10">Dari : </span>
-            </div>
+       
 	<center>
 		<table>
 			<tr>
-				<td><img src="../img/Logo.png" width="90" height="90"></td>
+				<td><img src="../img/Logo.png" width="90" height="90" style="margin-right: 10px;"></td>
 				<td>
-            <div class="height center">
+            <div style="margin-left: 10px;">
                 <b>
+                  <center>
                     <span class="size12">KEJAKSAAN REPUBLIK INDONESIA</span>
                     <br>
                     <span class="size15">KEJAKSAAN TINGGI JAWA TENGAH</span>
@@ -42,14 +37,24 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
                 </b>
                     <br>
                     <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
-            </div>
+                    </center>
+             </div>
 				</td>
 			</tr>
-			<tr>
-				<td colspan="100"><hr></td>
-			</tr>
-      </table>
-           
+		  <tr>
+				<td colspan="100"></td>
+		</tr>
+    </table>
+    <hr>
+</center>
+<div style="text-align: right;">
+                <span style="font-size: 12px"><b>IN.1</b></span>
+                <br>
+                <span class="size10">Copy ke : </span>
+                <br>
+                <span class="size10">Dari : </span>
+            </div>
+
   <br><br>
   <div>
     <center>
@@ -62,13 +67,13 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       <br><br>
     </center>
 
-    <table class="size11">
+    <table style="text-align: justify; text-justify: inter-word; width: 100%;">
       <?php
       $noMenimbang = 0;
       while ($data_menimbang = mysqli_fetch_array($menimbang)) {
       ?> <tr>
         <td><?php if ($noMenimbang == 0) {
-                echo "Menimbang : ";
+                echo "Menimbang: ";
               }
               $noMenimbang++; ?></td>
         <td><?php echo $noMenimbang . ". " ?></td>
@@ -76,12 +81,12 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       </tr> <?php
             }
               ?>
-    </table>
+
     <br>
 
-    <table class="size11" style="  text-align: justify; text-justify: inter-word;">
+    
       <tr class="">
-        <td>Dasar: </td>
+        <td>Dasar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
         <td>1. </td>
         <td>Undang-Undang Nomor 16 Tahun 2004 tentang Kejaksaan Republik Indonesia (Lembaran Negara Repubik Indonesia
           Tahun 2004 Nomor 67, Tambahan Lembaran Negara Republik Indonesia Nomor 4401);</td>
@@ -169,20 +174,25 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
     </table>
 
     <table class="size11">
+      
       <tr>
         <td>Untuk : </td>
-        <td><?php echo $data_spt['untuk_1'] ?></td>
-        <td><?php echo $data_spt['untuk_2'] ?></td>
+        <td><?php echo "1. " . $data_spt['untuk_1'] ?></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><?php echo "2. " . $data_spt['untuk_2'] ?></td>
       </tr>
     </table>
   </div>
 
 
-  <div class="right size11">
+  <div style="text-align: right;">
     <span>
       Dikeluarkan di : <?php echo $data_spt['tempat'] ?>
       <br>
       Pada tanggal : <?php echo date('d-m-Y', strtotime($data_spt['penerbitan'])); ?>
+      <hr>
     </span>
     <br><br>
     <span><b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG,</b></span>
