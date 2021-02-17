@@ -19,7 +19,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
     <!-- <link rel="stylesheet" href="../css/tSpt.css"> -->
     <title>Document</title>
 </head>
-<body>
+<body style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ; /*top, right, bottom, left */">
        
 	<center>
 		<table>
@@ -140,7 +140,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
         $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM pegawai WHERE nip = '$nip'"));
       ?> <tr>
         <td><?php if ($noPetugas == 0) {
-                echo "Petugas : ";
+                echo "Petugas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ";
               }
               $noPetugas++; ?></td>
         <td>
@@ -174,7 +174,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
     <table class="size11">
       
       <tr>
-        <td>Untuk : </td>
+        <td>Untuk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
         <td><?php echo "1. " . $data_spt['untuk_1'] ?></td>
       </tr>
       <tr>
@@ -185,20 +185,22 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
   </div>
 
 
-  <div style="text-align: right;">
-    <span>
+  <div style="text-align: right;margin-right:9%;">
+    <span style="text-align: center;">
       Dikeluarkan di : <?php echo $data_spt['tempat'] ?>
       <br>
       Pada tanggal : <?php echo date('d-m-Y', strtotime($data_spt['penerbitan'])); ?>
-      <hr>
+      <hr style="width:180px;text-align: right; margin-right:-7px;">
     </span>
+  </div>
     <br><br>
+    <div style="text-align:center; margin-left:45%">
     <span><b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG,</b></span>
     <br><br><br><br><br>
     <span><b>SUMURUNG P. SIMAREMARE, S.H., M.H.</b></span>
     <br>
     <span><b>JAKSA UTAMA PRATAMA NIP. 197007221993031003</b></span>
-  </div>
+    </div>
   <br>
 
   <div>
@@ -209,7 +211,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       ?>
       <tr>
         <td><?php if ($noTembusan == 0) {
-                echo "Tembusan : ";
+                echo "Tembusan&nbsp;&nbsp; : ";
               }
               $noTembusan++; ?></td>
         <td><?php echo $noTembusan . ". " ?></td>
