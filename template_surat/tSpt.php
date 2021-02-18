@@ -13,47 +13,49 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
 
 <!DOCTYPE html>
 <html style="line-height: 1;">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../css/tSpt.css"> -->
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="../css/tSpt.css"> -->
+  <title>Document</title>
 </head>
-<body style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ; /*top, right, bottom, left */">
-       
-	<center>
-		<table>
-			<tr>
-				<td><img src="../img/Logo.png" width="90" height="90" style="margin-right: 10px;"></td>
-				<td>
-            <div style="margin-left: 10px;">
-                <b>
-                  <center>
-                    <span class="size12">KEJAKSAAN REPUBLIK INDONESIA</span>
-                    <br>
-                    <span class="size15">KEJAKSAAN TINGGI JAWA TENGAH</span>
-                    <br>
-                    <span class="size19">KEJAKSAAN NEGERI KOTA SEMARANG</span>
-                </b>
-                    <br>
-                    <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
-                    </center>
-             </div>
-				</td>
-			</tr>
-		  <tr>
-				<td colspan="100"></td>
-		</tr>
-    </table>
-    <hr>
-</center>
-<div style="text-align: right;">
-                <span style="font-size: 12px"><b>IN.1</b></span>
+
+<body style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ; font-family:Arial, Helvetica, sans-serif">
+
+  <center>
+    <table>
+      <tr>
+        <td><img src="../img/Logo.png" width="90" height="90" style="margin-right: 10px;"></td>
+        <td>
+          <div style="margin-left: 10px;">
+            <b>
+              <center>
+                <span style="font-size: 11pt;">KEJAKSAAN REPUBLIK INDONESIA</span>
                 <br>
-                <span class="size10">Copy ke : </span>
+                <span style="font-size: 13pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
                 <br>
-                <span class="size10">Dari : </span>
-            </div>
+                <span style="font-size: 15pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+            </b>
+            <br>
+            <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
+  </center>
+  </div>
+  </td>
+  </tr>
+  <tr>
+    <td colspan="100"></td>
+  </tr>
+  </table>
+  <hr>
+  </center>
+  <div style="text-align: right;">
+    <span style="font-size: 12px"><b>IN.1</b></span>
+    <br>
+    <span class="size10">Copy ke :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <br>
+    <span class="size10">Dari :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+  </div>
 
   <br><br>
   <div>
@@ -61,7 +63,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       <span class="size12"><b><u>SURAT PERINTAH TUGAS</u></b></span>
       <br>
       NOMOR: SP.TUG -
-      <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m', strtotime($data_spt['penerbitan'])). "/" . date('Y', strtotime($data_spt['penerbitan'])); ?>
+      <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m', strtotime($data_spt['penerbitan'])) . "/" . date('Y', strtotime($data_spt['penerbitan'])); ?>
       <br><br>
       <b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG</b></span>
       <br><br>
@@ -72,16 +74,16 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       $noMenimbang = 0;
       while ($data_menimbang = mysqli_fetch_array($menimbang)) {
       ?> <tr>
-        <td><?php if ($noMenimbang == 0) {
+          <td><?php if ($noMenimbang == 0) {
                 echo "Menimbang: ";
               }
               $noMenimbang++; ?></td>
-        <td><?php echo $noMenimbang . ". " ?></td>
-        <td><?php echo $data_menimbang['isi']; ?></td>
-      </tr> <?php
+          <td><?php echo $noMenimbang . ". " ?></td>
+          <td><?php echo $data_menimbang['isi']; ?></td>
+        </tr> <?php
             }
               ?>
-        <br>
+      <br>
 
       <tr class="">
         <td>Dasar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
@@ -139,40 +141,40 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
         $nip = $data_petugas['nip'];
         $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM pegawai WHERE nip = '$nip'"));
       ?> <tr>
-        <td><?php if ($noPetugas == 0) {
+          <td><?php if ($noPetugas == 0) {
                 echo "Petugas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ";
               }
               $noPetugas++; ?></td>
-        <td>
-          <?php echo $noPetugas . ". " ?>
-        </td>
-        <td>Nama</td>
-        <td> <?php echo ": " . $data['nama'] ?></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>Pangkat</td>
-        <td><?php echo ": " . $data['pangkat'] ?></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>NIP</td>
-        <td><?php echo ": " . $data['nip'] ?></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>Jabatan</td>
-        <td><?php echo ": " . $data['jabatan'] ?></td>
-      </tr>
+          <td>
+            <?php echo $noPetugas . ". " ?>
+          </td>
+          <td>Nama</td>
+          <td> <?php echo ": " . $data['nama'] ?></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Pangkat</td>
+          <td><?php echo ": " . $data['pangkat'] ?></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>NIP</td>
+          <td><?php echo ": " . $data['nip'] ?></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Jabatan</td>
+          <td><?php echo ": " . $data['jabatan'] ?></td>
+        </tr>
       <?php }
       ?>
     </table>
 
     <table class="size11">
-      
+
       <tr>
         <td>Untuk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
         <td><?php echo "1. " . $data_spt['untuk_1'] ?></td>
@@ -190,17 +192,17 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       Dikeluarkan di : <?php echo $data_spt['tempat'] ?>
       <br>
       Pada tanggal : <?php echo date('d-m-Y', strtotime($data_spt['penerbitan'])); ?>
-      <hr style="width:180px;text-align: right; margin-right:-7px;">
+      <hr style="width:190px;text-align: right; margin-right:0px;">
     </span>
   </div>
-    <br><br>
-    <div style="text-align:center; margin-left:45%">
+  <br><br>
+  <div style="text-align:center; margin-left:45%">
     <span><b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG,</b></span>
     <br><br><br><br><br>
     <span><b>SUMURUNG P. SIMAREMARE, S.H., M.H.</b></span>
     <br>
     <span><b>JAKSA UTAMA PRATAMA NIP. 197007221993031003</b></span>
-    </div>
+  </div>
   <br>
 
   <div>
@@ -209,19 +211,20 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       $noTembusan = 0;
       while ($data_tembusan = mysqli_fetch_array($tembusan)) {
       ?>
-      <tr>
-        <td><?php if ($noTembusan == 0) {
+        <tr>
+          <td><?php if ($noTembusan == 0) {
                 echo "Tembusan&nbsp;&nbsp; : ";
               }
               $noTembusan++; ?></td>
-        <td><?php echo $noTembusan . ". " ?></td>
-        <td><?php echo $data_tembusan['isi']; ?></td>
-      </tr> <?php
+          <td><?php echo $noTembusan . ". " ?></td>
+          <td><?php echo $data_tembusan['isi']; ?></td>
+        </tr> <?php
             }
               ?>
     </table>
   </div>
 </body>
+
 </html>
 
 

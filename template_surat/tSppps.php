@@ -21,7 +21,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
   <title>Document</title>
 </head>
 
-<body>
+<body style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ; font-family:Arial, Helvetica, sans-serif">
   <center>
     <table>
       <tr>
@@ -51,9 +51,9 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
   <div style="text-align: right;">
     <span style="font-size: 12px"><b>IN.1</b></span>
     <br>
-    <span class="size10">Copy ke : </span>
+    <span class="size10">Copy ke :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
     <br>
-    <span class="size10">Dari : </span>
+    <span class="size10">Dari :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
   </div>
 
   <br><br>
@@ -84,13 +84,13 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
               ?>
       <br>
 
-      <tr class="">
+      <tr class="" style="vertical-align:top;">
         <td>Dasar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
         <td>1. </td>
         <td>Undang-Undang Nomor 16 Tahun 2004 tentang Kejaksaan Republik Indonesia (Lembaran Negara Repubik Indonesia
           Tahun 2004 Nomor 67, Tambahan Lembaran Negara Republik Indonesia Nomor 4401);</td>
       </tr>
-      <tr>
+      <tr style="vertical-align:top;">
         <td></td>
         <td>2. </td>
         <td>Undang-Undang Nomor 17 Tahun 2011 Tentang Intelijen Negara (Lembaran Negara Republik Indonesia Tahun 2011
@@ -101,7 +101,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
         <td>3. </td>
         <td><?php echo $data_sppps['dasar_1'] ?></td>
       </tr>
-      <tr>
+      <tr style="vertical-align:top;">
         <td></td>
         <td>4. </td>
         <td>Peraturan Presiden Republik Indonesia Nomor 38 Tahun 2010 tentang Organisasi dan Tata Kerja Kejaksaan
@@ -109,18 +109,18 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
           tentang Perubahan atas Peraturan Presiden Republik Indonesia Nomor 38 Tahun 2010 tanggal 15 Juni 2010 tentang
           Organisasi dan Tata Kerja Kejaksaan Republik Indonesia;</td>
       </tr>
-      <tr>
+      <tr style="vertical-align:top;">
         <td></td>
         <td>5. </td>
         <td>Peraturan Jaksa Agung Republik Indonesia Nomor : PER-006/A/JA/07/2017 tanggal 20 Juli 2017 tentang
           Organisasi dan Tata Kerja Kejaksaan Republik Indonesia;</td>
       </tr>
-      <tr>
+      <tr style="vertical-align:top;">
         <td></td>
         <td>6. </td>
         <td>Peraturan Jaksa Agung Nomor 4 Tahun 2019, tentang Administrasi Intelijen Kejaksaan Republik Indonesia;</td>
       </tr>
-      <tr>
+      <tr style="vertical-align:top;">
         <td></td>
         <td>7. </td>
         <td><?php echo $data_sppps['dasar_2'] ?></td>
@@ -141,7 +141,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
         $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM pegawai WHERE nip = '$nip'"));
       ?> <tr>
           <td><?php if ($noPetugas == 0) {
-                echo "Petugas : ";
+                echo "Petugas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ";
               }
               $noPetugas++; ?></td>
           <td>
@@ -175,51 +175,54 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
     <table class="size11">
 
       <tr>
-        <td>Untuk : </td>
+        <td>Untuk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
         <td><?php echo "1. " . $data_sppps['untuk_1'] ?></td>
       </tr>
       <tr>
         <td></td>
         <td><?php echo "2. " . $data_sppps['untuk_2'] ?></td>
+        <br>
       </tr>
     </table>
   </div>
 
-
-  <div style="text-align: right;">
+  <div style="text-align: center; margin-left:65%;">
     <span>
       Dikeluarkan di : <?php echo $data_sppps['tempat'] ?>
       <br>
       Pada tanggal : <?php echo date('d-m-Y', strtotime($data_sppps['penerbitan'])); ?>
-      <hr>
+      <hr style="width:190px;text-align: right; margin-right:0px;">
     </span>
+  </div>
+  <div style="text-align: right;">
     <br><br>
-    <span><b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG,</b></span>
-    <br><br><br><br><br>
-    <span><b>SUMURUNG P. SIMAREMARE, S.H., M.H.</b></span>
+    <div style="text-align:center; margin-left:45%">
+      <span><b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG,</b></span>
+      <br><br><br><br><br>
+      <span><b>SUMURUNG P. SIMAREMARE, S.H., M.H.</b></span>
+      <br>
+      <span><b>JAKSA UTAMA PRATAMA NIP. 197007221993031003</b></span>
+    </div>
     <br>
-    <span><b>JAKSA UTAMA PRATAMA NIP. 197007221993031003</b></span>
-  </div>
-  <br>
 
-  <div>
-    <table>
-      <?php
-      $noTembusan = 0;
-      while ($data_tembusan = mysqli_fetch_array($tembusan)) {
-      ?>
-        <tr>
-          <td><?php if ($noTembusan == 0) {
-                echo "Tembusan : ";
+    <div>
+      <table>
+        <?php
+        $noTembusan = 0;
+        while ($data_tembusan = mysqli_fetch_array($tembusan)) {
+        ?>
+          <tr>
+            <td><?php if ($noTembusan == 0) {
+                  echo "Tembusan : ";
+                }
+                $noTembusan++; ?></td>
+            <td><?php echo $noTembusan . ". " ?></td>
+            <td><?php echo $data_tembusan['isi']; ?></td>
+          </tr> <?php
               }
-              $noTembusan++; ?></td>
-          <td><?php echo $noTembusan . ". " ?></td>
-          <td><?php echo $data_tembusan['isi']; ?></td>
-        </tr> <?php
-            }
-              ?>
-    </table>
-  </div>
+                ?>
+      </table>
+    </div>
 </body>
 
 </html>
