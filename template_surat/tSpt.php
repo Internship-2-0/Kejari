@@ -20,42 +20,41 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
   <!-- <link rel="stylesheet" href="../css/tSpt.css"> -->
   <title>Document</title>
 </head>
-
-<body style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ; font-family:Arial, Helvetica, sans-serif">
-
-  <center>
-    <table>
-      <tr>
-        <td><img src="../img/Logo.png" width="90" height="90" style="margin-right: 10px;"></td>
-        <td>
-          <div style="margin-left: 10px;">
-            <b>
-              <center>
-                <span style="font-size: 11pt;">KEJAKSAAN REPUBLIK INDONESIA</span>
+<body style="font-family:Arial, Helvetica, sans-serif">
+<div style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ;">       
+	<center>
+		<table>
+			<tr>
+				<td><img src="../img/Logo.png" width="100" height="100" style="margin-right: 10px;"></td>
+				<td>
+            <div>
+                <b>
+                  <center>
+                    <span style="font-size: 12pt;">KEJAKSAAN REPUBLIK INDONESIA</span>
+                    <br>
+                    <span style="font-size: 15pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
+                    <br>
+                    <span style="font-size: 16pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+                </b>
+                    <br>
+                    <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
+                    </center>
+             </div>
+				</td>
+			</tr>
+		  <tr>
+				<td colspan="100"></td>
+		</tr>
+    </table>
+    <hr>
+</center>
+<div style="text-align: right;">
+                <span style="font-size: 12px"><b>IN.1</b></span>
                 <br>
-                <span style="font-size: 13pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
+                <span class="size10">Copy ke :&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 <br>
-                <span style="font-size: 15pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
-            </b>
-            <br>
-            <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
-  </center>
-  </div>
-  </td>
-  </tr>
-  <tr>
-    <td colspan="100"></td>
-  </tr>
-  </table>
-  <hr>
-  </center>
-  <div style="text-align: right;">
-    <span style="font-size: 12px"><b>IN.1</b></span>
-    <br>
-    <span class="size10">Copy ke :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-    <br>
-    <span class="size10">Dari :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-  </div>
+                <span class="size10">Dari :&nbsp;&nbsp;&nbsp;&nbsp; </span>
+            </div>
 
   <br><br>
   <div>
@@ -73,8 +72,8 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       <?php
       $noMenimbang = 0;
       while ($data_menimbang = mysqli_fetch_array($menimbang)) {
-      ?> <tr>
-          <td><?php if ($noMenimbang == 0) {
+      ?> <tr style="vertical-align: text-top">
+        <td><?php if ($noMenimbang == 0) {
                 echo "Menimbang: ";
               }
               $noMenimbang++; ?></td>
@@ -85,8 +84,8 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
               ?>
       <br>
 
-      <tr class="">
-        <td>Dasar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
+      <tr style="vertical-align: text-top;">
+        <td>Dasar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</td>
         <td>1. </td>
         <td>Undang-Undang Nomor 16 Tahun 2004 tentang Kejaksaan Republik Indonesia (Lembaran Negara Repubik Indonesia
           Tahun 2004 Nomor 67, Tambahan Lembaran Negara Republik Indonesia Nomor 4401);</td>
@@ -192,7 +191,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       Dikeluarkan di : <?php echo $data_spt['tempat'] ?>
       <br>
       Pada tanggal : <?php echo date('d-m-Y', strtotime($data_spt['penerbitan'])); ?>
-      <hr style="width:190px;text-align: right; margin-right:0px;">
+      <hr style="width:200px;text-align: right; margin-right:-5px;">
     </span>
   </div>
   <br><br>
@@ -223,6 +222,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
               ?>
     </table>
   </div>
+</div>
 </body>
 
 </html>
