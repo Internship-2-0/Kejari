@@ -23,6 +23,8 @@
         include 'pages/tambah_pegawai.php';
       } else if ($_GET['halaman'] == 'sppps') {
         include 'pages/form_surat/sppps.php';
+      } else if ($_GET['halaman'] == 'spoi') {
+        include 'pages/form_surat/spoi.php';
       }
     } else {
       include 'pages/home.php';

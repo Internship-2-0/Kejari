@@ -2,12 +2,12 @@
 
 include "../include/koneksi.php";
 
-$id_sppps = $_GET['id'];
+$id_spoi = $_GET['id'];
 
-$data_sppps = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM sppps WHERE id_sppps = '$id_sppps'"));
-$petugas = mysqli_query($koneksi, "SELECT * FROM petugas_sppps WHERE id_sppps = '$id_sppps'");
-$menimbang = mysqli_query($koneksi, "SELECT * FROM menimbang_sppps WHERE id_sppps = '$id_sppps'");
-$tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps = '$id_sppps'");
+$data_spoi = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM spoi WHERE id_spoi = '$id_spoi'"));
+$petugas = mysqli_query($koneksi, "SELECT * FROM petugas_spoi WHERE id_spoi = '$id_spoi'");
+$menimbang = mysqli_query($koneksi, "SELECT * FROM menimbang_spoi WHERE id_spoi = '$id_spoi'");
+$tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spoi WHERE id_spoi = '$id_spoi'");
 
 ?>
 
@@ -59,10 +59,10 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
     <br><br>
     <div>
         <center>
-            <span class="size12"><b><u>SURAT PERINTAH PENGAMANAN PEMBANGUNAN STRATEGIS</u></b></span>
+            <span class="size12"><b><u>SURAT PERINTAH OPERASI INTELIJEN</u></b></span>
             <br>
-            NOMOR: SP.PPS -
-            <?PHP echo $data_sppps['nomor_surat'] . "/" . $data_sppps['kode_pejabat'] . "/" . $data_sppps['kode_masalah'] . "/" . date('m', strtotime($data_sppps['penerbitan'])) . "/" . date('Y', strtotime($data_sppps['penerbitan'])); ?>
+            NOMOR: SP.OPS -
+            <?PHP echo $data_spoi['nomor_surat'] . "/" . $data_spoi['kode_pejabat'] . "/" . $data_spoi['kode_masalah'] . "/" . date('m', strtotime($data_spoi['penerbitan'])) . "/" . date('Y', strtotime($data_spoi['penerbitan'])); ?>
             <br><br>
             <b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG</b></span>
             <br><br>
@@ -99,7 +99,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
             <tr>
                 <td></td>
                 <td>3. </td>
-                <td><?php echo $data_sppps['dasar_1'] ?></td>
+                <td><?php echo $data_spoi['dasar_1'] ?></td>
             </tr>
             <tr style="vertical-align:top;">
                 <td></td>
@@ -123,7 +123,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
             <tr style="vertical-align:top;">
                 <td></td>
                 <td>7. </td>
-                <td><?php echo $data_sppps['dasar_2'] ?></td>
+                <td><?php echo $data_spoi['dasar_2'] ?></td>
             </tr>
         </table>
         <br>
@@ -176,11 +176,11 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
 
             <tr>
                 <td>Untuk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
-                <td><?php echo "1. " . $data_sppps['untuk_1'] ?></td>
+                <td><?php echo "1. " . $data_spoi['untuk_1'] ?></td>
             </tr>
             <tr>
                 <td></td>
-                <td><?php echo "2. " . $data_sppps['untuk_2'] ?></td>
+                <td><?php echo "2. " . $data_spoi['untuk_2'] ?></td>
                 <br>
             </tr>
         </table>
@@ -188,9 +188,9 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
 
     <div style="text-align: center; margin-left:65%;">
         <span>
-            Dikeluarkan di : <?php echo $data_sppps['tempat'] ?>
+            Dikeluarkan di : <?php echo $data_spoi['tempat'] ?>
             <br>
-            Pada tanggal : <?php echo date('d-m-Y', strtotime($data_sppps['penerbitan'])); ?>
+            Pada tanggal : <?php echo date('d-m-Y', strtotime($data_spoi['penerbitan'])); ?>
             <hr style="width:190px;text-align: right; margin-right:0px;">
         </span>
     </div>

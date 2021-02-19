@@ -54,7 +54,7 @@ include "include/fHistory.php";
           $link = $data_sppps['id_sppps'];
         ?>
           <tr>
-            <td>SP.TUG -
+            <td>SP.PPS -
               <?PHP echo $data_sppps['nomor_surat'] . "/" . $data_sppps['kode_pejabat'] . "/" . $data_sppps['kode_masalah'] . "/" . date('m', strtotime($data_sppps['penerbitan'])) . "/" . date('Y', strtotime($data_sppps['penerbitan'])); ?>
             </td>
             <td><?php echo $data_sppps['penerbitan'] ?></td>
@@ -63,10 +63,69 @@ include "include/fHistory.php";
             </td>
           </tr>
         <?php } ?>
-
       </tbody>
     </table>
   </div>
+  <br>
+
+  <div class="box shadow">
+    <h4>Surat Perintah Operasi Intelijen</h4><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No Surat</th>
+          <th>Tanggal Surat</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        while ($data_spoi = mysqli_fetch_array($spoi)) {
+          $link = $data_spoi['id_spoi'];
+        ?>
+          <tr>
+            <td>SP.OPS -
+              <?PHP echo $data_spoi['nomor_surat'] . "/" . $data_spoi['kode_pejabat'] . "/" . $data_spoi['kode_masalah'] . "/" . date('m', strtotime($data_spoi['penerbitan'])) . "/" . date('Y', strtotime($data_spoi['penerbitan'])); ?>
+            </td>
+            <td><?php echo $data_spoi['penerbitan'] ?></td>
+            <td>
+              <a class="btn btn-primary" href="template_surat/tSpoi.php?id=<?php echo $link; ?>">SHOW</a>
+            </td>
+          </tr>
+        <?php } ?>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box shadow">
+    <h4>Analisa Sasaran</h4><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No Surat</th>
+          <th>Tanggal Surat</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        while ($data_spoi = mysqli_fetch_array($spoi)) {
+          $link = $data_spoi['id_spoi'];
+        ?>
+          <tr>
+            <td>SP.OPS -
+              <?PHP echo $data_spoi['nomor_surat'] . "/" . $data_spoi['kode_pejabat'] . "/" . $data_spoi['kode_masalah'] . "/" . date('m', strtotime($data_spoi['penerbitan'])) . "/" . date('Y', strtotime($data_spoi['penerbitan'])); ?>
+            </td>
+            <td><?php echo $data_spoi['penerbitan'] ?></td>
+            <td>
+              <a class="btn btn-primary" href="template_surat/tSpoi.php?id=<?php echo $link; ?>">SHOW</a>
+            </td>
+          </tr>
+        <?php } ?>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
 </html>
