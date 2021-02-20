@@ -128,6 +128,77 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
               </table>
           </td>
         </tr>
+        <tr>
+          <td>c. </td>
+          <td>KEHENDAK SASARAN</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+              <table>
+                <tr>
+                  <td style="vertical-align: top;">-</td>
+                  <td>Pelaksanaan pengamanan Sumber Daya Organisasi (SDO) dan pengamanan penanganan perkara tersebut dapat berhasil dan berjalan dengan aman.</td>
+                </tr>
+              </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>4. </td>
+    <td>OPOSISI</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <table>
+        <tr>
+          <td>a. </td>
+          <td>AKTIF</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+              <table>
+                <tr>
+                  <td style="vertical-align: top;">-</td>
+                  <td>Mengantisipasi tersangka / terdakwa yang berusaha melarikan diri pada saat penyerahan tersangka dari penyidik ke Kejaksaan Negeri Kota Semarang.</td>
+                </tr>
+              </table>
+          </td>
+        </tr>
+        <tr>
+          <td>b. </td>
+          <td>KELEMAHAN</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+              <table>
+                <tr>
+                  <td style="vertical-align: top;">-</td>
+                  <td>Ketersediaan ruangan untuk koordinasi maupun pada saat penyerahan tersangka dan barang bukti yang terbatas.</td>
+                </tr>
+              </table>
+          </td>
+        </tr>
+        <tr>
+          <td>c. </td>
+          <td>KEHENDAK SASARAN</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+              <table>
+                <tr>
+                  <td style="vertical-align: top;">-</td>
+                  <td>Pelaksanaan pengamanan Sumber Daya Organisasi (SDO) dan pengamanan penanganan perkara tersebut dapat berhasil dan berjalan dengan aman.</td>
+                </tr>
+              </table>
+          </td>
+        </tr>
       </table>
     </td>
   </tr>
