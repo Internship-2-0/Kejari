@@ -25,20 +25,17 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
 	<center>
 		<table>
 			<tr>
-				<td><img src="../img/Logo.png" width="100" height="100" style="margin-right: 10px;"></td>
+				<td><img src="../img/Logo.png" width="50" height="50" style="margin-right: 50px;"></td>
 				<td>
             <div>
                 <b>
                   <center>
-                    <span style="font-size: 12pt;">KEJAKSAAN REPUBLIK INDONESIA</span>
                     <br>
                     <span style="font-size: 15pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
                     <br>
                     <span style="font-size: 16pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+                  </center>
                 </b>
-                    <br>
-                    <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
-                    </center>
              </div>
 				</td>
 			</tr>
@@ -218,6 +215,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
 <div style="margin-left:200pt">
   <center>
     <span>Semarang, 04 Januari 2021</span>
+    <br>
     <span>Kepala Seksi Intelijen</span>
       <br>
       <br>
@@ -226,6 +224,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       <br>
       <br>
     <span style="border-bottom: 1px solid currentColor">Subagio Gigih Wijaya, S.H., M.H.</span>
+    <br>
     <span>Jaksa Muda NIP. 19851116 200812 1 001</span>
   </center>
 </div>
