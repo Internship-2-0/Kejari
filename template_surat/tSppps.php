@@ -20,36 +20,36 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
   <!-- <link rel="stylesheet" href="../css/tSpt.css"> -->
   <title>Document</title>
 </head>
-
-<body style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ; font-family:Arial, Helvetica, sans-serif">
-  <center>
-    <table>
-      <tr>
-        <td><img src="../img/Logo.png" width="90" height="90" style="margin-right: 10px;"></td>
-        <td>
-          <div style="margin-left: 10px;">
-            <b>
-              <center>
-                <span class="size12">KEJAKSAAN REPUBLIK INDONESIA</span>
-                <br>
-                <span class="size15">KEJAKSAAN TINGGI JAWA TENGAH</span>
-                <br>
-                <span class="size19">KEJAKSAAN NEGERI KOTA SEMARANG</span>
-            </b>
-            <br>
-            <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
-  </center>
-  </div>
-  </td>
-  </tr>
-  <tr>
-    <td colspan="100"></td>
-  </tr>
-  </table>
-  <hr>
-  </center>
+<body style="font-family:Arial, Helvetica, sans-serif">
+<div style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ;">       
+	<center>
+		<table>
+			<tr>
+				<td><img src="../img/Logo.png" width="100" height="100" style="margin-right: 10px;"></td>
+				<td>
+            <div>
+                <b>
+                  <center>
+                    <span style="font-size: 12pt;">KEJAKSAAN REPUBLIK INDONESIA</span>
+                    <br>
+                    <span style="font-size: 15pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
+                    <br>
+                    <span style="font-size: 16pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+                </b>
+                    <br>
+                    <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
+                    </center>
+             </div>
+				</td>
+			</tr>
+		  <tr>
+				<td colspan="100"></td>
+		</tr>
+    </table>
+    <hr>
+</center>
   <div style="text-align: right;">
-    <span style="font-size: 12px"><b>IN.1</b></span>
+    <span style="font-size: 12px"><b>IN.2</b></span>
     <br>
     <span class="size10">Copy ke :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
     <br>
@@ -191,7 +191,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_sppps WHERE id_sppps 
       Dikeluarkan di : <?php echo $data_sppps['tempat'] ?>
       <br>
       Pada tanggal : <?php echo date('d-m-Y', strtotime($data_sppps['penerbitan'])); ?>
-      <hr style="width:190px;text-align: right; margin-right:0px;">
+      <hr style="width:190px;text-align: right; margin-right:11px;">
     </span>
   </div>
   <div style="text-align: right;">
