@@ -166,12 +166,20 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
                   <td style="vertical-align: top;">-</td>
                   <td>Mengantisipasi tersangka / terdakwa yang berusaha melarikan diri pada saat penyerahan tersangka dari penyidik ke Kejaksaan Negeri Kota Semarang.</td>
                 </tr>
+                <tr>
+                  <td style="vertical-align: top;">-</td>
+                  <td>Mengantisipasi adanya kemungkinan hilangnya Barang Bukti pada saat penyerahan Barang Bukti dari penyidik ke Kejaksaan Negeri Kota Semarang.</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">-</td>
+                  <td>Mengantisipasi adanya pengunjung maupun keluarga korban / terdakwa yang membuat gaduh di persidangan.</td>
+                </tr>
               </table>
           </td>
         </tr>
         <tr>
           <td>b. </td>
-          <td>KELEMAHAN</td>
+          <td>PASIF</td>
         </tr>
         <tr>
           <td></td>
@@ -179,14 +187,14 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
               <table>
                 <tr>
                   <td style="vertical-align: top;">-</td>
-                  <td>Ketersediaan ruangan untuk koordinasi maupun pada saat penyerahan tersangka dan barang bukti yang terbatas.</td>
+                  <td>Mengantisipasi adanya pihak luar yang tidak berkepentingan yang mengganggu jalannya kegiatan.</td>
                 </tr>
               </table>
           </td>
         </tr>
         <tr>
           <td>c. </td>
-          <td>KEHENDAK SASARAN</td>
+          <td>PENDUKUNG</td>
         </tr>
         <tr>
           <td></td>
@@ -194,7 +202,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
               <table>
                 <tr>
                   <td style="vertical-align: top;">-</td>
-                  <td>Pelaksanaan pengamanan Sumber Daya Organisasi (SDO) dan pengamanan penanganan perkara tersebut dapat berhasil dan berjalan dengan aman.</td>
+                  <td>Pelaksanaan pengamanan Sumber Daya Organisasi (SDO) dan pengamanan penanganan perkara didukung personil Tim Intelijen Kejaksaan Negeri Kota Semarang dan pihak-pihak yang terkait lainnya.</td>
                 </tr>
               </table>
           </td>
@@ -203,6 +211,24 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
     </td>
   </tr>
 </table>
+
+  <br>
+  <br>
+
+<div style="margin-left:200pt">
+  <center>
+    <span>Semarang, 04 Januari 2021</span>
+    <span>Kepala Seksi Intelijen</span>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    <span style="border-bottom: 1px solid currentColor">Subagio Gigih Wijaya, S.H., M.H.</span>
+    <span>Jaksa Muda NIP. 19851116 200812 1 001</span>
+  </center>
+</div>
 
 </body>
 </html>
