@@ -33,7 +33,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
                     <br>
                     <span style="font-size: 15pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
                     <br>
-                    <span style="font-size: 16pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+                    <span style="font-size: 19pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
                   </center>
                 </b>
              </div>
