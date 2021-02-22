@@ -9,6 +9,7 @@
       <a class="dropdown-item" href="index.php?halaman=spt">Surat Perintah Tugas</a>
       <a class="dropdown-item" href="index.php?halaman=sppps">Surat Perintah Pengamanan Pembangunan Strategis</a>
       <a class="dropdown-item" href="index.php?halaman=spoi">Surat Perintah Operasi Intelijen</a>
+      <a class="dropdown-item" href="index.php?halaman=ansas">Analisa Sasaran</a>
     </div>
   </div>
 </div>

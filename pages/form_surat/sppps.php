@@ -13,7 +13,7 @@ include "../Kejari/include/fSppps.php";
                 <div class="form-group">
                     <label for="nomor_surat">Nomor Surat</label>
                     <div class="form-inline">
-                        SP.TUG -
+                        SP.PPS -
                         <input type="text" name="nomor_surat" class="form-control mb-2 mr-sm-2 ml-2" placeholder="nomor surat">/
                         <input type="text" name="kode_pejabat" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode pejabat">/
                         <input type="text" name="kode_masalah" class="form-control mb-2 mr-sm-2 ml-2" placeholder="kode masalah">

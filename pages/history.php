@@ -30,6 +30,7 @@ include "include/fHistory.php";
             <td><?php echo $data_spt['penerbitan'] ?></td>
             <td>
               <a class="btn btn-primary" href="template_surat/tSpt.php?id=<?php echo $link; ?>">SHOW</a>
+              <a name="hapus_spt" class="btn btn-danger" href="pages/hapus_surat.php?id=<?php echo $link; ?>">HAPUS</a>
             </td>
           </tr>
         <?php } ?>
@@ -90,6 +91,7 @@ include "include/fHistory.php";
             <td><?php echo $data_spoi['penerbitan'] ?></td>
             <td>
               <a class="btn btn-primary" href="template_surat/tSpoi.php?id=<?php echo $link; ?>">SHOW</a>
+
             </td>
           </tr>
         <?php } ?>

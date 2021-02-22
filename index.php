@@ -25,6 +25,10 @@
         include 'pages/form_surat/sppps.php';
       } else if ($_GET['halaman'] == 'spoi') {
         include 'pages/form_surat/spoi.php';
+      } else if ($_GET['halaman'] == 'ansas') {
+        include 'pages/form_surat/ansas.php';
+      } else if ($_GET['halaman'] == 'hapus_surat') {
+        include 'pages/hapus_surat.php';
       }
     } else {
       include 'pages/home.php';
