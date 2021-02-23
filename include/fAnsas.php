@@ -8,72 +8,130 @@ include "koneksi.php";
 
 function inputDatabase($koneksi)
 {
-    if (isset($_POST['nomor_surat'])) {
-        //spoi
-        $nomor_surat = $_POST['nomor_surat'];
-        $kode_pejabat = $_POST['kode_pejabat'];
-        $kode_masalah = $_POST['kode_masalah'];
-        $tanggal_terbit = $_POST['tanggal_terbit'];
-        $dasar_1 = $_POST['dasar_1'];
-        $dasar_2 = $_POST['dasar_2'];
-        $untuk_1 = $_POST['untuk_1'];
-        $untuk_2 = $_POST['untuk_2'];
-        $mulai = $_POST['mulai'];
-        $selesai = $_POST['selesai'];
-        $tempat = $_POST['tempat'];
+    if (isset($_POST['sasaran'])) {
+        //ansas
+        $sasaran = $_POST['sasaran'];
+        $kondisi_situasi = $_POST['kondisi_situasi'];
+        $kekuatan = $_POST['kekuatan'];
+        $kelemahan = $_POST['kelemahan'];
+        $kehendak = $_POST['kehendak'];
+        $op_aktif = $_POST['op_aktif'];
+        $op_pasif = $_POST['op_pasif'];
+        $op_pendukung = $_POST['op_pendukung'];
+        $penerbitan = $_POST['penerbitan'];
 
-        mysqli_query($koneksi, "INSERT INTO spoi (nomor_surat, kode_pejabat, kode_masalah, penerbitan, dasar_1, dasar_2, untuk_1, untuk_2, mulai, selesai, tempat) VALUES ('$nomor_surat', '$kode_pejabat', '$kode_masalah', '$tanggal_terbit', '$dasar_1', '$dasar_2', '$untuk_1', '$untuk_2', '$mulai', '$selesai', '$tempat')");
+        mysqli_query($koneksi, "INSERT INTO ansas (sasaran, kondisi_situasi, kekuatan, penerbitan, kehendak, op_aktif, op_pasif, op_pendukung, penerbitan) VALUES ('$sasaran', '$kondisi_situasi', '$kekuatan', '$kelemahan', '$kehendak', '$op_aktif', '$op_pasif', '$op_pendukung', '$penerbitan'");
 
-        //id spoi
-        $spoi = mysqli_query($koneksi, "SELECT * FROM spoi WHERE id_spoi IN (SELECT MAX(id_spoi) FROM spoi)");
-        $spoi_terakhir = mysqli_fetch_array($spoi);
-        $id_spoi = $spoi_terakhir['id_spoi'];
+        //id ansas
+        $ansas = mysqli_query($koneksi, "SELECT * FROM ansas WHERE id_ansas IN (SELECT MAX(id_ansas) FROM ansas)");
+        $ansas_terakhir = mysqli_fetch_array($ansas);
+        $id_ansas = $ansas_terakhir['id_ansas'];
 
         //menimbang
         foreach ($_POST['menimbang'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO menimbang_spoi (id_spoi, isi) VALUES ('$id_spoi', '$isi')");
+            mysqli_query($koneksi, "INSERT INTO menimbang_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
         }
 
         //petugas
         foreach ($_POST['petugas'] as $nip) {
-            mysqli_query($koneksi, "INSERT INTO petugas_spoi (id_spoi, nip) VALUES ('$id_spoi', '$nip')");
+            mysqli_query($koneksi, "INSERT INTO petugas_ansas (id_ansas, nip) VALUES ('$id_ansas', '$nip')");
         }
 
         //tembusan
         foreach ($_POST['tembusan'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO tembusan_spoi (id_spoi, isi) VALUES ('$id_spoi', '$isi')");
+            mysqli_query($koneksi, "INSERT INTO tembusan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
         }
 
         echo "<script> alert('Pembuatan Surat Sukses') </script>";
-        echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tspoi.php?id=" . $id_spoi . "'>";
+        echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tansas.php?id=" . $id_ansas . "'>";
     }
 }
 
 ?>
 
 <script lang="javascript">
-    //append menimbang
-    var jmlhMenimbang = 1;
+    //append kondisi_situasi
+    var jmlhKondisiSituasi = 1;
 
-    function tambahMenimbang() {
-        var strMenimbang;
-        strMenimbang = "<div id=\"srow" + jmlhMenimbang +
-            "\" class=\"mb-2\" ><input type=\"text\" name=\"menimbang[]\" class=\"form-control\" placeholder=\"menimbang " +
-            jmlhMenimbang + "\"/></div >";
-        $("#menimbang").append(strMenimbang);
-        jmlhMenimbang += 1;
+    function tambahKondisiSituasi() {
+        var strKondisiSituasi;
+        strKondisiSituasi = "<div id=\"kondisi_row" + jmlhKondisiSituasi +
+            "\" class=\"mb-2\" ><textarea name=\"kondisi_situasi[]\" class=\"form-control\" placeholder=\"kondisi & situasi " +
+            jmlhKondisiSituasi + "\"/></div >";
+        $("#kondisi_situasi").append(strKondisiSituasi);
+        jmlhKondisiSituasi += 1;
     }
 
-    //append tembusan
-    var jmlhTembusan = 1;
+    //append kekuatan
+    var jmlhKekuatan = 1;
 
-    function tambahTembusan() {
-        var strTembusan;
-        strTembusan = "<div id=\"trow" + jmlhTembusan +
-            "\" class=\"mb-2\" ><input type=\"text\" name=\"tembusan[]\" class=\"form-control\" placeholder=\"tembusan " +
-            jmlhTembusan + "\"/></div >";
-        $("#tembusan").append(strTembusan);
-        jmlhTembusan += 1;
+    function tambahKekuatan() {
+        var strKekuatan;
+        strKekuatan = "<div id=\"kekuatan_row" + jmlhKekuatan +
+            "\" class=\"mb-2\" ><textarea \"name=\"kekuatan[]\" class=\"form-control\" placeholder=\"kekuatan " +
+            jmlhKekuatan + "\"/></div >";
+        $("#kekuatan").append(strKekuatan);
+        jmlhKekuatan += 1;
+    }
+
+    //append kelemahan
+    var jmlhKelemahan = 1;
+
+    function tambahKelemahan() {
+        var strKelemahan;
+        strKelemahan = "<div id=\"kelemahan_row" + jmlhKelemahan +
+            "\" class=\"mb-2\" ><textarea \"name=\"kelemahan[]\" class=\"form-control\" placeholder=\"kelemahan " +
+            jmlhKelemahan + "\"/></div >";
+        $("#kelemahan").append(strKelemahan);
+        jmlhKelemahan += 1;
+    }
+
+    //append kehendak
+    var jmlhKehendak = 1;
+
+    function tambahKehendak() {
+        var strKehendak;
+        strKehendak = "<div id=\"kehendak_row" + jmlhKehendak +
+            "\" class=\"mb-2\" ><textarea \"name=\"kehendak[]\" class=\"form-control\" placeholder=\"kehendak " +
+            jmlhKehendak + "\"/></div >";
+        $("#kehendak").append(strKehendak);
+        jmlhKehendak += 1;
+    }
+
+    //append op_aktif
+    var jmlhOpAktif = 1;
+
+    function tambahOpAktif() {
+        var strOpAktif;
+        strOpAktif = "<div id=\"op_aktif_row" + jmlhOpAktif +
+            "\" class=\"mb-2\" ><textarea \"name=\"op_aktif[]\" class=\"form-control\" placeholder=\"op_aktif " +
+            jmlhOpAktif + "\"/></div >";
+        $("#op_aktif").append(strOpAktif);
+        jmlhOpAktif += 1;
+    }
+
+    //append kekuatan
+    var jmlhOpPasif = 1;
+
+    function tambahOpPasif() {
+        var strOpPasif;
+        strOpPasif = "<div id=\"op_pasif_row" + jmlhOpPasif +
+            "\" class=\"mb-2\" ><textarea \"name=\"op_Pasif[]\" class=\"form-control\" placeholder=\"OpPasif " +
+            jmlhOpPasif + "\"/></div >";
+        $("#op_pasif").append(strOpPasif);
+        jmlhOpPasif += 1;
+    }
+
+    //append kekuatan
+    var jmlhOpPendukung = 1;
+
+    function tambahOpPendukung() {
+        var strOpPendukung;
+        strOpPendukung = "<div id=\"op_pendukung_row" + jmlhOpPendukung +
+            "\" class=\"mb-2\" ><textarea \"name=\"op_pendukung[]\" class=\"form-control\" placeholder=\"OpPendukung " +
+            jmlhOpPendukung + "\"/></div >";
+        $("#op_pendukung").append(strOpPendukung);
+        jmlhOpPendukung += 1;
     }
 
     //hapus elemen/append

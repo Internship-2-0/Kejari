@@ -79,11 +79,11 @@ include "../Kejari/include/fSpt.php";
         <h5><b>Pengesahan</b></h5>
         <hr>
         <div class="form-group">
-          <label for="kota_keluar">Tempat Surat Diterbitkan</label>
+          <label for="surat_terbit">Tempat Surat Diterbitkan</label>
           <input type="text" name="tempat" class="form-control" placeholder="contoh: Semarang">
         </div>
         <div class="form-group">
-          <label for="kota_keluar">Tembusan</label>
+          <label for="tembusan">Tembusan</label>
           <!-- <input type="text" name="tembusan" class="form-control"> -->
           <div id="tembusan"></div>
           <button class="btn btn-danger mt-2" type="button" onclick="hapusTembusan(); return false;">Hapus</button>
