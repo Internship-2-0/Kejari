@@ -10,57 +10,50 @@ function inputDatabase($koneksi)
 {
     if (isset($_POST['sasaran'])) {
         //ansas
+        $penerbitan = $_POST['tanggal_terbit'];
         $sasaran = $_POST['sasaran'];
-        $kondisi_situasi = $_POST['kondisi_situasi'];
-        $kekuatan = $_POST['kekuatan'];
-        $kelemahan = $_POST['kelemahan'];
-        $kehendak = $_POST['kehendak'];
-        $op_aktif = $_POST['op_aktif'];
-        $op_pasif = $_POST['op_pasif'];
-        $op_pendukung = $_POST['op_pendukung'];
-        $penerbitan = $_POST['penerbitan'];
 
-        mysqli_query($koneksi, "INSERT INTO ansas (sasaran, kondisi_situasi, kekuatan, penerbitan, kehendak, op_aktif, op_pasif, op_pendukung, penerbitan) VALUES ('$sasaran', '$kondisi_situasi', '$kekuatan', '$kelemahan', '$kehendak', '$op_aktif', '$op_pasif', '$op_pendukung', '$penerbitan'");
+        mysqli_query($koneksi, "INSERT INTO ansas (sasaran, penerbitan) VALUES ('$sasaran', '$penerbitan')");
 
-        //id ansas
+        // id ansas
         $ansas = mysqli_query($koneksi, "SELECT * FROM ansas WHERE id_ansas IN (SELECT MAX(id_ansas) FROM ansas)");
         $ansas_terakhir = mysqli_fetch_array($ansas);
         $id_ansas = $ansas_terakhir['id_ansas'];
 
-        //kondisi_situasi
-        foreach ($_POST['kondisi_situasi'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO kondisi_situasi_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        }
+        // //kondisi_situasi
+        // foreach ($_POST['kondisi_situasi'] as $isi) {
+        //     mysqli_query($koneksi, "INSERT INTO kondisi_situasi_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        // }
 
-        //kekuatan
-        foreach ($_POST['kekuatan'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO kekuatan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        }
+        // //kekuatan
+        // foreach ($_POST['kekuatan'] as $isi) {
+        //     mysqli_query($koneksi, "INSERT INTO kekuatan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        // }
 
-        //kelemahan
-        foreach ($_POST['kelemahan'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO kelemahan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        }
+        // //kelemahan
+        // foreach ($_POST['kelemahan'] as $isi) {
+        //     mysqli_query($koneksi, "INSERT INTO kelemahan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        // }
 
-        //kehendak
-        foreach ($_POST['kehendak'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO kehendak_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        }
+        // //kehendak
+        // foreach ($_POST['kehendak'] as $isi) {
+        //     mysqli_query($koneksi, "INSERT INTO kehendak_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        // }
 
-        //op_aktif
-        foreach ($_POST['op_aktif'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO op_aktif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        }
+        // //op_aktif
+        // foreach ($_POST['op_aktif'] as $isi) {
+        //     mysqli_query($koneksi, "INSERT INTO op_aktif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        // }
 
-        //op_pasif
-        foreach ($_POST['op_pasif'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO op_pasif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        }
+        // //op_pasif
+        // foreach ($_POST['op_pasif'] as $isi) {
+        //     mysqli_query($koneksi, "INSERT INTO op_pasif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        // }
 
-        //op_pendukung
-        foreach ($_POST['op_pendukung'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO op_pendukung_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        }
+        // //op_pendukung
+        // foreach ($_POST['op_pendukung'] as $isi) {
+        //     mysqli_query($koneksi, "INSERT INTO op_pendukung_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        // }
 
         echo "<script> alert('Pembuatan Surat Sukses') </script>";
         echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tAnsas.php?id=" . $id_ansas . "'>";

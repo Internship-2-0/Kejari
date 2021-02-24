@@ -111,22 +111,22 @@ include "include/fHistory.php";
       </thead>
       <tbody>
         <?php
-        while ($data_spoi = mysqli_fetch_array($spoi)) {
-          $link = $data_spoi['id_spoi'];
+        while ($data_ansas = mysqli_fetch_array($ansas)) {
+          $link = $data_ansas['id_ansas'];
         ?>
           <tr>
-            <td>SP.OPS -
-              <?PHP echo $data_spoi['nomor_surat'] . "/" . $data_spoi['kode_pejabat'] . "/" . $data_spoi['kode_masalah'] . "/" . date('m', strtotime($data_spoi['penerbitan'])) . "/" . date('Y', strtotime($data_spoi['penerbitan'])); ?>
-            </td>
-            <td><?php echo $data_spoi['penerbitan'] ?></td>
+            <td></td>
+            <td><?php echo $data_ansas['penerbitan'] ?></td>
             <td>
-              <a class="btn btn-primary" href="template_surat/tSpoi.php?id=<?php echo $link; ?>">SHOW</a>
+              <a class="btn btn-primary" href="template_surat/tAnsas.php?id=<?php echo $link; ?>">SHOW</a>
             </td>
           </tr>
         <?php } ?>
       </tbody>
     </table>
   </div>
+
+
 
 </div>
 

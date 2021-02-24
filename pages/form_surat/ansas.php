@@ -8,6 +8,17 @@ include "../Kejari/include/fAnsas.php";
     <form method="post">
         <div class="container-fluid">
             <div class="box shadow">
+                <h5><b>PENERBITAN SURAT</b></h5>
+                <hr>
+                <div class="form-group">
+                    <label for="tanggal_terbit">Tanggal Penerbitan Surat</label>
+                    <div class="form-inline">
+                        <input type="date" name="tanggal_terbit" class="form-control mb-2 mr-sm-2" placeholder="Tanggal">
+                    </div>
+                </div>
+            </div>
+
+            <div class="box shadow mt-4">
                 <h5><b>SASARAN</b></h5>
                 <hr>
                 <div class="form-group">

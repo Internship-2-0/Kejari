@@ -20,34 +20,35 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spoi WHERE id_spoi = 
     <!-- <link rel="stylesheet" href="../css/tSpt.css"> -->
     <title>Document</title>
 </head>
+
 <body style="font-family:Arial, Helvetica, sans-serif">
-<div style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ;">       
-	<center>
-		<table>
-			<tr>
-				<td><img src="../img/Logo.png" width="100" height="100" style="margin-right: 10px;"></td>
-				<td>
-            <div>
-                <b>
-                  <center>
-                    <span style="font-size: 12pt;">KEJAKSAAN REPUBLIK INDONESIA</span>
-                    <br>
-                    <span style="font-size: 15pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
-                    <br>
-                    <span style="font-size: 16pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
-                </b>
-                    <br>
-                    <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
-                    </center>
-             </div>
-				</td>
-			</tr>
-		  <tr>
-				<td colspan="100"></td>
-		</tr>
+    <div style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ;">
+        <center>
+            <table>
+                <tr>
+                    <td><img src="../img/Logo.png" width="100" height="100" style="margin-right: 10px;"></td>
+                    <td>
+                        <div>
+                            <b>
+                                <center>
+                                    <span style="font-size: 12pt;">KEJAKSAAN REPUBLIK INDONESIA</span>
+                                    <br>
+                                    <span style="font-size: 15pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
+                                    <br>
+                                    <span style="font-size: 16pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+                            </b>
+                            <br>
+                            <span class="size12"> Abdulrahman Saleh No.5-9, Kota Semarang 50145<br>Telp / Fax. (024) 7607507 www.kejari.semarangkota.go.id</span>
+        </center>
+    </div>
+    </td>
+    </tr>
+    <tr>
+        <td colspan="100"></td>
+    </tr>
     </table>
     <hr>
-</center>
+    </center>
     <div style="text-align: right;">
         <span style="font-size: 12px"><b>IN.3</b></span>
         <br>
@@ -72,12 +73,18 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spoi WHERE id_spoi = 
             <?php
             $noMenimbang = 0;
             while ($data_menimbang = mysqli_fetch_array($menimbang)) {
-            ?> <tr>
-                    <td><?php if ($noMenimbang == 0) {
+            ?>
+                <tr>
+                    <td>
+                        <?php if ($noMenimbang == 0) {
                             echo "Menimbang: ";
                         }
-                        $noMenimbang++; ?></td>
-                    <td><?php echo $noMenimbang . ". " ?></td>
+                        $noMenimbang++;
+                        ?>
+                    </td>
+                    <td>
+                        <?php echo $noMenimbang . ". " ?>
+                    </td>
                     <td><?php echo $data_menimbang['isi']; ?></td>
                 </tr> <?php
                     }
