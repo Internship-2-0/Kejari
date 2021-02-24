@@ -27,23 +27,43 @@ function inputDatabase($koneksi)
         $ansas_terakhir = mysqli_fetch_array($ansas);
         $id_ansas = $ansas_terakhir['id_ansas'];
 
-        //menimbang
-        foreach ($_POST['menimbang'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO menimbang_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        //kondisi_situasi
+        foreach ($_POST['kondisi_situasi'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO kondisi_situasi_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
         }
 
-        //petugas
-        foreach ($_POST['petugas'] as $nip) {
-            mysqli_query($koneksi, "INSERT INTO petugas_ansas (id_ansas, nip) VALUES ('$id_ansas', '$nip')");
+        //kekuatan
+        foreach ($_POST['kekuatan'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO kekuatan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
         }
 
-        //tembusan
-        foreach ($_POST['tembusan'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO tembusan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        //kelemahan
+        foreach ($_POST['kelemahan'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO kelemahan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
+
+        //kehendak
+        foreach ($_POST['kehendak'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO kehendak_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
+
+        //op_aktif
+        foreach ($_POST['op_aktif'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO op_aktif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
+
+        //op_pasif
+        foreach ($_POST['op_pasif'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO op_pasif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
+
+        //op_pendukung
+        foreach ($_POST['op_pendukung'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO op_pendukung_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
         }
 
         echo "<script> alert('Pembuatan Surat Sukses') </script>";
-        echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tansas.php?id=" . $id_ansas . "'>";
+        echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tAnsas.php?id=" . $id_ansas . "'>";
     }
 }
 
@@ -135,25 +155,52 @@ function inputDatabase($koneksi)
     }
 
     //hapus elemen/append
-    function hapusMenimbang() {
-        if (jmlhMenimbang != 1) {
-            jmlhMenimbang -= 1;
-            $("#srow" + jmlhMenimbang).remove();
+    function hapusKondisiSituasi() {
+        if (jmlhKondisiSituasi != 1) {
+            jmlhKondisiSituasi -= 1;
+            $("#kondisi_row" + jmlhKondisiSituasi).remove();
         }
     }
 
-    //hapus elemen/append
-    function hapusTembusan() {
-        if (jmlhTembusan != 1) {
-            jmlhTembusan -= 1;
-            $("#trow" + jmlhTembusan).remove();
+    function hapusKekuatan() {
+        if (jmlhKekuatan != 1) {
+            jmlhKekuatan -= 1;
+            $("#kekuatan_row" + jmlhKekuatan).remove();
         }
     }
 
-    $(document).ready(function() {
-        //pilih petugas
-        $("#pilihPetugas").select2({
-            placeholder: 'Pilih Petugas '
-        });
-    })
+    function hapusKelemahan() {
+        if (jmlhKelemahan != 1) {
+            jmlhKelemahan -= 1;
+            $("#kelemahan_row" + jmlhKelemahan).remove();
+        }
+    }
+
+    function hapusKehendak() {
+        if (jmlhKehendak != 1) {
+            jmlhKehendak -= 1;
+            $("#kehendak_row" + jmlhKehendak).remove();
+        }
+    }
+
+    function hapusOpAktif() {
+        if (jmlhOpAktif != 1) {
+            jmlhOpAktif -= 1;
+            $("#op_aktif_row" + jmlhOpAktif).remove();
+        }
+    }
+
+    function hapusOpPasif() {
+        if (jmlhOpPasif != 1) {
+            jmlhOpPasif -= 1;
+            $("#op_pasif_row" + jmlhOpPasif).remove();
+        }
+    }
+
+    function hapusOpPendukung() {
+        if (jmlhOpPendukung != 1) {
+            jmlhOpPendukung -= 1;
+            $("#op_pendukung_row" + jmlhOpPendukung).remove();
+        }
+    }
 </script>
