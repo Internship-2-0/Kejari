@@ -20,40 +20,40 @@ function inputDatabase($koneksi)
         $ansas_terakhir = mysqli_fetch_array($ansas);
         $id_ansas = $ansas_terakhir['id_ansas'];
 
-        // //kondisi_situasi
-        // foreach ($_POST['kondisi_situasi'] as $isi) {
-        //     mysqli_query($koneksi, "INSERT INTO kondisi_situasi_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        // }
+        //kondisi_situasi
+        foreach ($_POST['kondisi_situasi'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO kondisi_situasi_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
 
-        // //kekuatan
-        // foreach ($_POST['kekuatan'] as $isi) {
-        //     mysqli_query($koneksi, "INSERT INTO kekuatan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        // }
+        //kekuatan
+        foreach ($_POST['kekuatan'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO kekuatan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
 
-        // //kelemahan
-        // foreach ($_POST['kelemahan'] as $isi) {
-        //     mysqli_query($koneksi, "INSERT INTO kelemahan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        // }
+        //kelemahan
+        foreach ($_POST['kelemahan'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO kelemahan_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
 
-        // //kehendak
-        // foreach ($_POST['kehendak'] as $isi) {
-        //     mysqli_query($koneksi, "INSERT INTO kehendak_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        // }
+        //kehendak
+        foreach ($_POST['kehendak'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO kehendak_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
 
-        // //op_aktif
-        // foreach ($_POST['op_aktif'] as $isi) {
-        //     mysqli_query($koneksi, "INSERT INTO op_aktif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        // }
+        //op_aktif
+        foreach ($_POST['op_aktif'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO op_aktif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
 
-        // //op_pasif
-        // foreach ($_POST['op_pasif'] as $isi) {
-        //     mysqli_query($koneksi, "INSERT INTO op_pasif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        // }
+        //op_pasif
+        foreach ($_POST['op_pasif'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO op_pasif_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
 
-        // //op_pendukung
-        // foreach ($_POST['op_pendukung'] as $isi) {
-        //     mysqli_query($koneksi, "INSERT INTO op_pendukung_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
-        // }
+        //op_pendukung
+        foreach ($_POST['op_pendukung'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO op_pendukung_ansas (id_ansas, isi) VALUES ('$id_ansas', '$isi')");
+        }
 
         echo "<script> alert('Pembuatan Surat Sukses') </script>";
         echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tAnsas.php?id=" . $id_ansas . "'>";
@@ -81,7 +81,7 @@ function inputDatabase($koneksi)
     function tambahKekuatan() {
         var strKekuatan;
         strKekuatan = "<div id=\"kekuatan_row" + jmlhKekuatan +
-            "\" class=\"mb-2\" ><textarea \"name=\"kekuatan[]\" class=\"form-control\" placeholder=\"kekuatan " +
+            "\" class=\"mb-2\" ><textarea name=\"kekuatan[]\" class=\"form-control\" placeholder=\"kekuatan " +
             jmlhKekuatan + "\"/></div >";
         $("#kekuatan").append(strKekuatan);
         jmlhKekuatan += 1;
@@ -93,7 +93,7 @@ function inputDatabase($koneksi)
     function tambahKelemahan() {
         var strKelemahan;
         strKelemahan = "<div id=\"kelemahan_row" + jmlhKelemahan +
-            "\" class=\"mb-2\" ><textarea \"name=\"kelemahan[]\" class=\"form-control\" placeholder=\"kelemahan " +
+            "\" class=\"mb-2\" ><textarea name=\"kelemahan[]\" class=\"form-control\" placeholder=\"kelemahan " +
             jmlhKelemahan + "\"/></div >";
         $("#kelemahan").append(strKelemahan);
         jmlhKelemahan += 1;
@@ -105,7 +105,7 @@ function inputDatabase($koneksi)
     function tambahKehendak() {
         var strKehendak;
         strKehendak = "<div id=\"kehendak_row" + jmlhKehendak +
-            "\" class=\"mb-2\" ><textarea \"name=\"kehendak[]\" class=\"form-control\" placeholder=\"kehendak " +
+            "\" class=\"mb-2\" ><textarea name=\"kehendak[]\" class=\"form-control\" placeholder=\"kehendak " +
             jmlhKehendak + "\"/></div >";
         $("#kehendak").append(strKehendak);
         jmlhKehendak += 1;
@@ -117,7 +117,7 @@ function inputDatabase($koneksi)
     function tambahOpAktif() {
         var strOpAktif;
         strOpAktif = "<div id=\"op_aktif_row" + jmlhOpAktif +
-            "\" class=\"mb-2\" ><textarea \"name=\"op_aktif[]\" class=\"form-control\" placeholder=\"op_aktif " +
+            "\" class=\"mb-2\" ><textarea name=\"op_aktif[]\" class=\"form-control\" placeholder=\"op_aktif " +
             jmlhOpAktif + "\"/></div >";
         $("#op_aktif").append(strOpAktif);
         jmlhOpAktif += 1;
@@ -129,7 +129,7 @@ function inputDatabase($koneksi)
     function tambahOpPasif() {
         var strOpPasif;
         strOpPasif = "<div id=\"op_pasif_row" + jmlhOpPasif +
-            "\" class=\"mb-2\" ><textarea \"name=\"op_Pasif[]\" class=\"form-control\" placeholder=\"OpPasif " +
+            "\" class=\"mb-2\" ><textarea name=\"op_Pasif[]\" class=\"form-control\" placeholder=\"OpPasif " +
             jmlhOpPasif + "\"/></div >";
         $("#op_pasif").append(strOpPasif);
         jmlhOpPasif += 1;
@@ -141,7 +141,7 @@ function inputDatabase($koneksi)
     function tambahOpPendukung() {
         var strOpPendukung;
         strOpPendukung = "<div id=\"op_pendukung_row" + jmlhOpPendukung +
-            "\" class=\"mb-2\" ><textarea \"name=\"op_pendukung[]\" class=\"form-control\" placeholder=\"OpPendukung " +
+            "\" class=\"mb-2\" ><textarea name=\"op_pendukung[]\" class=\"form-control\" placeholder=\"OpPendukung " +
             jmlhOpPendukung + "\"/></div >";
         $("#op_pendukung").append(strOpPendukung);
         jmlhOpPendukung += 1;

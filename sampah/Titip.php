@@ -51,7 +51,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       <span class="size12"><b><u>SURAT PERINTAH TUGAS</u></b></span>
       <br>
       NOMOR: SP.TUG -
-      <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m', strtotime($data_spt['penerbitan'])). "/" . date('Y', strtotime($data_spt['penerbitan'])); ?>
+      <?PHP echo $data_spt['nomor_surat'] . "/" . $data_spt['kode_pejabat'] . "/" . $data_spt['kode_masalah'] . "/" . date('m', strtotime($data_spt['penerbitan'])) . "/" . date('Y', strtotime($data_spt['penerbitan'])); ?>
       <br><br>
       <b>KEPALA KEJAKSAAN NEGERI KOTA SEMARANG</b></span>
       <br><br>
@@ -62,13 +62,13 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       $noMenimbang = 0;
       while ($data_menimbang = mysqli_fetch_array($menimbang)) {
       ?> <tr>
-        <td><?php if ($noMenimbang == 0) {
+          <td><?php if ($noMenimbang == 0) {
                 echo "Menimbang : ";
               }
               $noMenimbang++; ?></td>
-        <td><?php echo $noMenimbang . ". " ?></td>
-        <td><?php echo $data_menimbang['isi']; ?></td>
-      </tr> <?php
+          <td><?php echo $noMenimbang . ". " ?></td>
+          <td><?php echo $data_menimbang['isi']; ?></td>
+        </tr> <?php
             }
               ?>
     </table>
@@ -131,34 +131,34 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
         $nip = $data_petugas['nip'];
         $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM pegawai WHERE nip = '$nip'"));
       ?> <tr>
-        <td><?php if ($noPetugas == 0) {
+          <td><?php if ($noPetugas == 0) {
                 echo "Petugas : ";
               }
               $noPetugas++; ?></td>
-        <td>
-          <?php echo $noPetugas . ". " ?>
-        </td>
-        <td>Nama</td>
-        <td> <?php echo ": " . $data['nama'] ?></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>Pangkat</td>
-        <td><?php echo ": " . $data['pangkat'] ?></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>NIP</td>
-        <td><?php echo ": " . $data['nip'] ?></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>Jabatan</td>
-        <td><?php echo ": " . $data['jabatan'] ?></td>
-      </tr>
+          <td>
+            <?php echo $noPetugas . ". " ?>
+          </td>
+          <td>Nama</td>
+          <td> <?php echo ": " . $data['nama'] ?></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Pangkat</td>
+          <td><?php echo ": " . $data['pangkat'] ?></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>NIP</td>
+          <td><?php echo ": " . $data['nip'] ?></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Jabatan</td>
+          <td><?php echo ": " . $data['jabatan'] ?></td>
+        </tr>
       <?php }
       ?>
     </table>
@@ -194,14 +194,14 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
       $noTembusan = 0;
       while ($data_tembusan = mysqli_fetch_array($tembusan)) {
       ?>
-      <tr>
-        <td><?php if ($noTembusan == 0) {
+        <tr>
+          <td><?php if ($noTembusan == 0) {
                 echo "Tembusan : ";
               }
               $noTembusan++; ?></td>
-        <td><?php echo $noTembusan . ". " ?></td>
-        <td><?php echo $data_tembusan['isi']; ?></td>
-      </tr> <?php
+          <td><?php echo $noTembusan . ". " ?></td>
+          <td><?php echo $data_tembusan['isi']; ?></td>
+        </tr> <?php
             }
               ?>
     </table>
@@ -216,3 +216,37 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$
   window.print();
 </script>
 <meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+
+  <?php
+  $noKondisiSituasi = 0;
+  while ($data_kondisi_situasi = mysqli_fetch_array($kondisi_situasi)) {
+  ?>
+<tr>
+  <td>
+    <?php if ($noKondisiSituasi == 0) {
+      echo "Kondisi dan Situasi: ";
+    }
+    $noKondisiSituasi++;
+    ?>
+  </td>
+  <td>
+    <?php echo $noKondisiSituasi . ". " ?>
+  </td>
+  <td><?php echo $data_kondisi_situasi['isi']; ?></td>
+</tr> <?php
+    }
+      ?>

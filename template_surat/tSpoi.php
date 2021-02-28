@@ -22,6 +22,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spoi WHERE id_spoi = 
 </head>
 
 <body style="font-family:Arial, Helvetica, sans-serif">
+    <!-- KOP -->
     <div style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ;">
         <center>
             <table>
@@ -69,7 +70,8 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spoi WHERE id_spoi = 
             <br><br>
         </center>
 
-        <table style="text-align: justify; text-justify: inter-word; width: 100%;">
+        <!-- ISI -->
+        <table style="text-align: justify; text-justify: inter-word; width: 100%; border:1pt solid black">
             <?php
             $noMenimbang = 0;
             while ($data_menimbang = mysqli_fetch_array($menimbang)) {
@@ -235,7 +237,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spoi WHERE id_spoi = 
 </html>
 
 
-<script>
+<!-- <script>
     window.print();
 </script>
-<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
+<meta http-equiv="refresh" content="3;url=../index.php?halaman=history"> -->

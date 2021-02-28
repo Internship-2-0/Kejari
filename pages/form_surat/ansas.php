@@ -85,6 +85,7 @@ include "../Kejari/include/fAnsas.php";
                 <button type="submit" name="save" class="btn btn-primary mt-4">Submit</button>
             </div>
     </form>
+
     <?php
     inputDatabase($koneksi);
     ?>

@@ -25,6 +25,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
 </head>
 
 <body style="font-family:Arial, Helvetica, sans-serif">
+  <!-- KOP -->
   <div style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ;">
     <center>
       <table>
@@ -57,304 +58,161 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
       <span class="size10">Dari :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
     </div>
 
+    <!-- ISI -->
     <center>
       <b><span style="font-size: 12pt;">ANALISA SASARAN</span></b>
       <br>
       <br>
     </center>
 
-    <table style="font-size: 11pt; vertical-align:top;">
-      <!-- Sasaran -->
-      <?php echo $data_ansas['sasaran'] ?>
-      <br>
+    <!-- Sasaran -->
+    <table style="text-align: justify; text-justify: inter-word; font-size: 11pt;">
+      <tr>
+        <td>1. </td>
+        <td>SASARAN</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><?php echo $data_ansas['sasaran'] ?></td>
+      </tr>
 
       <!-- Kondisi & Situasi -->
-      <?php
-      $noKondisiSituasi = 0;
-      while ($data_kondisi_situasi = mysqli_fetch_array($kondisi_situasi)) {
-      ?>
-        <tr>
-          <td>
-            <?php if ($noKondisiSituasi == 0) {
-              echo "KondisiSituasi: ";
-            }
-            $noKondisiSituasi++;
-            ?>
-          </td>
-          <td>
-            <?php echo $noKondisiSituasi . ". " ?>
-          </td>
-          <td><?php echo $data_kondisi_situasi['isi']; ?></td>
-        </tr> <?php
-            }
-              ?>
-      <br>
-
-      <!-- kekuatan -->
-      <?php
-      $noKekuatan = 0;
-      while ($data_kekuatan = mysqli_fetch_array($kekuatan)) {
-      ?>
-        <tr>
-          <td>
-            <?php if ($noKekuatan == 0) {
-              echo "Kekuatan: ";
-            }
-            $noKekuatan++;
-            ?>
-          </td>
-          <td>
-            <?php echo $noKekuatan . ". " ?>
-          </td>
-          <td><?php echo $data_kekuatan['isi']; ?></td>
-        </tr> <?php
-            }
-              ?>
-      <br>
-
-      <!-- kelemahan -->
-      <?php
-      $noKelemahan = 0;
-      while ($data_kelemahan = mysqli_fetch_array($kelemahan)) {
-      ?>
-        <tr>
-          <td>
-            <?php if ($noKelemahan == 0) {
-              echo "Kelemahan: ";
-            }
-            $noKelemahan++;
-            ?>
-          </td>
-          <td>
-            <?php echo $noKelemahan . ". " ?>
-          </td>
-          <td><?php echo $data_kelemahan['isi']; ?></td>
-        </tr> <?php
-            }
-              ?>
-      <br>
-
-      <!-- Kehendak -->
-      <?php
-      $noKehendak = 0;
-      while ($data_Kehendak = mysqli_fetch_array($kehendak)) {
-      ?>
-        <tr>
-          <td>
-            <?php if ($noKehendak == 0) {
-              echo "Kehendak: ";
-            }
-            $noKehendak++;
-            ?>
-          </td>
-          <td>
-            <?php echo $noKehendak . ". " ?>
-          </td>
-          <td><?php echo $data_kehendak['isi']; ?></td>
-        </tr> <?php
-            }
-              ?>
-      <br>
-
-      <!-- OpAktif -->
-      <?php
-      $noOpAktif = 0;
-      while ($data_op_aktif = mysqli_fetch_array($op_aktif)) {
-      ?>
-        <tr>
-          <td>
-            <?php if ($noOpAktif == 0) {
-              echo "Aktif: ";
-            }
-            $noOpAktif++;
-            ?>
-          </td>
-          <td>
-            <?php echo $noOpAktif . ". " ?>
-          </td>
-          <td><?php echo $data_op_aktif['isi']; ?></td>
-        </tr> <?php
-            }
-              ?>
-      <br>
-
-      <!-- OpPasif -->
-      <?php
-      $noOpPasif = 0;
-      while ($data_op_pasif = mysqli_fetch_array($op_pasif)) {
-      ?>
-        <tr>
-          <td>
-            <?php if ($noOpPasif == 0) {
-              echo "Pasif: ";
-            }
-            $noOpPasif++;
-            ?>
-          </td>
-          <td>
-            <?php echo $noOpPasif . ". " ?>
-          </td>
-          <td><?php echo $data_op_pasif['isi']; ?></td>
-        </tr> <?php
-            }
-              ?>
-      <br>
-
-      <!-- OpPendukung -->
-      <?php
-      $noOpPendukung = 0;
-      while ($data_op_pendukung = mysqli_fetch_array($op_pendukung)) {
-      ?>
-        <tr>
-          <td>
-            <?php if ($noOpPendukung == 0) {
-              echo "Pendukung: ";
-            }
-            $noOpPendukung++;
-            ?>
-          </td>
-          <td>
-            <?php echo $noOpPendukung . ". " ?>
-          </td>
-          <td><?php echo $data_op_pendukung['isi']; ?></td>
-        </tr> <?php
-            }
-              ?>
-      <br>
-
-      <!-- <tr>
+      <tr>
         <td style="vertical-align: top;">2. </td>
-        <td>KONDISI DAN SITUASI SASARAN</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <table style="font-size: 11pt;">
-            <tr>
-              <td style="vertical-align: top;">a. </td>
-              <td>Surat Perintah Operasi Intelijen Kepala Kejaksaan Negeri Kota Surat Perintah Operasi Intelijen Nomor : SP.OPS- 1 /M.3.10/Dip.4/01/2021, tanggal 04 Januari 2021 untuk mendukung kegiatan Seksi Tindak Pidana Umum dan Seksi Tindak Pidana Khusus Kejaksaan Negeri Kota Semarang </td>
-            </tr>
-            <tr>
-              <td style="vertical-align: top;">b. </td>
-              <td>Bahwa diperlukan pengamanan (PAM) dan penggalangan (GAL) dalam pelaksanaan penyerahan tersangka dan barang bukti maupun pengamanan setiap kegiatan persidangan agar berjalan dengan aman serta mengantisipasi hal-hal yang dapat menimbulkan AGHT yang dapat mengganggu jalannya kegiatan tersebut.</td>
-            </tr>
+        <td>KONDISI DAN SITUASI SASARAN
+          <table>
+            <?php
+            $noKondisiSituasi = 'a';
+            while ($data_kondisi_situasi = mysqli_fetch_array($kondisi_situasi)) {
+            ?>
+              <tr>
+                <td><?php echo $noKondisiSituasi . ". " ?></td>
+                <td><?php echo $data_kondisi_situasi['isi']; ?></td>
+              </tr>
+            <?php
+              $noKondisiSituasi++;
+            }
+            ?>
           </table>
         </td>
       </tr>
+
+      <!-- kekuatan, kelemahan, kehendak -->
       <tr>
-        <td>3.</td>
-        <td>KEKUATAN, KELEMAHAN DAN KEHENDAK SASARAN</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
+        <td style="vertical-align: top;">3. </td>
+        <td>KEKUATAN, KELEMAHAN DAN KEHENDAK SASARAN
           <table>
             <tr>
               <td>a. </td>
-              <td>KEKUATAN</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
+              <td>KEKUATAN
                 <table>
-                  <tr>
-                    <td style="vertical-align: top;">-</td>
-                    <td>Personil Pengamanan didukung oleh banyak pihak, yakni terdiri atas : Tim Intelijen Kejaksaan Negeri Kota Semarang.</td>
-                  </tr>
+                  <!-- kekuatan -->
+                  <?php
+                  $noKekuatan = "-";
+                  while ($data_kekuatan = mysqli_fetch_array($kekuatan)) {
+                  ?>
+                    <tr>
+                      <td><?php echo $noKekuatan . " " ?></td>
+                      <td><?php echo $data_kekuatan['isi']; ?></td>
+                    </tr>
+                  <?php } ?>
                 </table>
               </td>
             </tr>
             <tr>
               <td>b. </td>
-              <td>KELEMAHAN</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
+              <td>KELEMAHAN
                 <table>
-                  <tr>
-                    <td style="vertical-align: top;">-</td>
-                    <td>Ketersediaan ruangan untuk koordinasi maupun pada saat penyerahan tersangka dan barang bukti yang terbatas.</td>
-                  </tr>
+                  <!-- kelemahan -->
+                  <?php
+                  $noKelemahan = "-";
+                  while ($data_kelemahan = mysqli_fetch_array($kelemahan)) {
+                  ?>
+                    <tr>
+                      <td><?php echo $noKelemahan . " " ?></td>
+                      <td><?php echo $data_kelemahan['isi']; ?></td>
+                    </tr>
+                  <?php } ?>
                 </table>
               </td>
             </tr>
             <tr>
               <td>c. </td>
-              <td>KEHENDAK SASARAN</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
+              <td>KEHENDAK SASARAN
                 <table>
-                  <tr>
-                    <td style="vertical-align: top;">-</td>
-                    <td>Pelaksanaan pengamanan Sumber Daya Organisasi (SDO) dan pengamanan penanganan perkara tersebut dapat berhasil dan berjalan dengan aman.</td>
-                  </tr>
+                  <!-- Kehendak -->
+                  <?php
+                  $noKehendak = "-";
+                  while ($data_kehendak = mysqli_fetch_array($kehendak)) {
+                  ?>
+                    <tr>
+                      <td><?php echo $noKehendak . " " ?></td>
+                      <td><?php echo $data_kehendak['isi']; ?></td>
+                    </tr>
+                  <?php } ?>
                 </table>
               </td>
             </tr>
           </table>
         </td>
       </tr>
+
       <tr>
-        <td>4. </td>
-        <td>OPOSISI</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
+        <td style="vertical-align: top;">4. </td>
+        <td>OPOSISI
           <table>
+            <!-- OpAktif -->
             <tr>
               <td>a. </td>
-              <td>AKTIF</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
+              <td>AKTIf
                 <table>
-                  <tr>
-                    <td style="vertical-align: top;">-</td>
-                    <td>Mengantisipasi tersangka / terdakwa yang berusaha melarikan diri pada saat penyerahan tersangka dari penyidik ke Kejaksaan Negeri Kota Semarang.</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">-</td>
-                    <td>Mengantisipasi adanya kemungkinan hilangnya Barang Bukti pada saat penyerahan Barang Bukti dari penyidik ke Kejaksaan Negeri Kota Semarang.</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">-</td>
-                    <td>Mengantisipasi adanya pengunjung maupun keluarga korban / terdakwa yang membuat gaduh di persidangan.</td>
-                  </tr>
+                  <?php
+                  $noOpAktif = "-";
+                  while ($data_op_aktif = mysqli_fetch_array($op_aktif)) {
+                  ?>
+                    <tr>
+                      <td>
+                        <?php echo $noOpAktif . " " ?>
+                      </td>
+                      <td><?php echo $data_op_aktif['isi']; ?></td>
+                    </tr>
+                  <?php } ?>
                 </table>
               </td>
             </tr>
+            <!-- OpPasif -->
             <tr>
               <td>b. </td>
-              <td>PASIF</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
+              <td>PASIF
                 <table>
-                  <tr>
-                    <td style="vertical-align: top;">-</td>
-                    <td>Mengantisipasi adanya pihak luar yang tidak berkepentingan yang mengganggu jalannya kegiatan.</td>
-                  </tr>
+                  <?php
+                  $noOpPasif = "-";
+                  while ($data_op_pasif = mysqli_fetch_array($op_pasif)) {
+                  ?>
+                    <tr>
+                      <td>
+                        <?php echo $noOpPasif . " " ?>
+                      </td>
+                      <td><?php echo $data_op_pasif['isi']; ?></td>
+                    </tr>
+                  <?php } ?>
                 </table>
               </td>
             </tr>
+            <!-- OpPendukung -->
             <tr>
               <td>c. </td>
-              <td>PENDUKUNG</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
+              <td>PENDUKUNG
                 <table>
-                  <tr>
-                    <td style="vertical-align: top;">-</td>
-                    <td>Pelaksanaan pengamanan Sumber Daya Organisasi (SDO) dan pengamanan penanganan perkara didukung personil Tim Intelijen Kejaksaan Negeri Kota Semarang dan pihak-pihak yang terkait lainnya.</td>
-                  </tr>
+                  <?php
+                  $noOpPendukung = "-";
+                  while ($data_op_pendukung = mysqli_fetch_array($op_pendukung)) {
+                  ?>
+                    <tr>
+                      <td><?php echo $noOpPendukung . " " ?></td>
+                      <td><?php echo $data_op_pendukung['isi']; ?></td>
+                    </tr>
+                  <?php } ?>
                 </table>
               </td>
             </tr>
@@ -363,30 +221,10 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
       </tr>
     </table>
 
-    <br>
-    <br>
-
-    <div style="margin-left:200pt">
-      <center>
-        <span>Semarang, 04 Januari 2021</span>
-        <br>
-        <span>Kepala Seksi Intelijen</span>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <span style="border-bottom: 1px solid currentColor">Subagio Gigih Wijaya, S.H., M.H.</span>
-        <br>
-        <span>Jaksa Muda NIP. 19851116 200812 1 001</span>
-      </center>
-    </div> -->
-
 </body>
 
 </html>
-<script>
+<!-- <script>
   window.print();
 </script>
-<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
+<meta http-equiv="refresh" content="3;url=../index.php?halaman=history"> -->
