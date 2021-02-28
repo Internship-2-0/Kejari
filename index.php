@@ -27,6 +27,8 @@
         include 'pages/form_surat/spoi.php';
       } else if ($_GET['halaman'] == 'ansas') {
         include 'pages/form_surat/ansas.php';
+      } else if ($_GET['halaman'] == 'antug') {
+        include 'pages/form_surat/antug.php';
       } else if ($_GET['halaman'] == 'hapus_surat') {
         include 'pages/hapus_surat.php';
       }
