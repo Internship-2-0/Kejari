@@ -24,87 +24,60 @@ function tampilPetugas($koneksi, $petugas)
 
 function inputDatabase($koneksi)
 {
-    if (isset($_POST['nomor_surat'])) {
-        //spoi
-        $nomor_surat = $_POST['nomor_surat'];
-        $kode_pejabat = $_POST['kode_pejabat'];
-        $kode_masalah = $_POST['kode_masalah'];
+    if (isset($_POST['tanggal_terbit'])) {
+        //antug
+        $identifikasi_tugas = $_POST['identifikasi_tugas'];
         $tanggal_terbit = $_POST['tanggal_terbit'];
-        $dasar_1 = $_POST['dasar_1'];
-        $dasar_2 = $_POST['dasar_2'];
-        $untuk_1 = $_POST['untuk_1'];
-        $untuk_2 = $_POST['untuk_2'];
-        $mulai = $_POST['mulai'];
-        $selesai = $_POST['selesai'];
-        $tempat = $_POST['tempat'];
+        $mulai_tugas = $_POST['mulai_tugas'];
+        $tempat_tugas = $_POST['tempat_tugas'];
+        $sasaran_tugas = $_POST['sasaran_tugas'];
+        $informasi_diperlukan = $_POST['informasi_diperlukan'];
+        $sarana_pendukung_1 = $_POST['sarana_pendukung_1'];
+        $sarana_pendukung_2 = $_POST['sarana_pendukung_2'];
+        $komunikasi_koordinasi = $_POST['komunikasi_koordinasi'];
 
-        mysqli_query($koneksi, "INSERT INTO spoi (nomor_surat, kode_pejabat, kode_masalah, penerbitan, dasar_1, dasar_2, untuk_1, untuk_2, mulai, selesai, tempat) VALUES ('$nomor_surat', '$kode_pejabat', '$kode_masalah', '$tanggal_terbit', '$dasar_1', '$dasar_2', '$untuk_1', '$untuk_2', '$mulai', '$selesai', '$tempat')");
+        mysqli_query($koneksi, "INSERT INTO antug (identifikasi_tugas, penerbitan, mulai_tugas, tempat_tugas, sasaran_tugas, informasi_diperlukan, sarana_pendukung_1, sarana_pendukung_2, komunikasi_koordinasi) VALUES ('$identifikasi_tugas', '$tanggal_terbit', '$mulai_tugas', '$tempat_tugas', '$sasaran_tugas', '$informasi_diperlukan', '$sarana_pendukung_1', '$sarana_pendukung_2', '$komunikasi_koordinasi')");
 
-        //id spoi
-        $spoi = mysqli_query($koneksi, "SELECT * FROM spoi WHERE id_spoi IN (SELECT MAX(id_spoi) FROM spoi)");
-        $spoi_terakhir = mysqli_fetch_array($spoi);
-        $id_spoi = $spoi_terakhir['id_spoi'];
+        //id antug
+        $antug = mysqli_query($koneksi, "SELECT * FROM antug WHERE id_antug IN (SELECT MAX(id_antug) FROM antug)");
+        $antug_terakhir = mysqli_fetch_array($antug);
+        $id_antug = $antug_terakhir['id_antug'];
 
-        //menimbang
-        foreach ($_POST['menimbang'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO menimbang_spoi (id_spoi, isi) VALUES ('$id_spoi', '$isi')");
+        //pelaporan_evaluasi
+        foreach ($_POST['pelaporan_evaluasi'] as $isi) {
+            mysqli_query($koneksi, "INSERT INTO pelaporan_evaluasi_antug (id_antug, isi) VALUES ('$id_antug', '$isi')");
         }
 
         //petugas
         foreach ($_POST['petugas'] as $nip) {
-            mysqli_query($koneksi, "INSERT INTO petugas_spoi (id_spoi, nip) VALUES ('$id_spoi', '$nip')");
-        }
-
-        //tembusan
-        foreach ($_POST['tembusan'] as $isi) {
-            mysqli_query($koneksi, "INSERT INTO tembusan_spoi (id_spoi, isi) VALUES ('$id_spoi', '$isi')");
+            mysqli_query($koneksi, "INSERT INTO pelaksana_tugas_antug (id_antug, nip) VALUES ('$id_antug', '$nip')");
         }
 
         echo "<script> alert('Pembuatan Surat Sukses') </script>";
-        echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tspoi.php?id=" . $id_spoi . "'>";
+        echo "<meta http-equiv='refresh' content='0; url=../kejari/template_surat/tantug.php?id=" . $id_antug . "'>";
     }
 }
 
 ?>
 
 <script lang="javascript">
-    //append menimbang
-    var jmlhMenimbang = 1;
+    //append pelaporan & evaluasi
+    var jmlhPelaporanEvaluasi = 1;
 
-    function tambahMenimbang() {
-        var strMenimbang;
-        strMenimbang = "<div id=\"srow" + jmlhMenimbang +
-            "\" class=\"mb-2\" ><input type=\"text\" name=\"menimbang[]\" class=\"form-control\" placeholder=\"menimbang " +
-            jmlhMenimbang + "\"/></div >";
-        $("#menimbang").append(strMenimbang);
-        jmlhMenimbang += 1;
-    }
-
-    //append tembusan
-    var jmlhTembusan = 1;
-
-    function tambahTembusan() {
-        var strTembusan;
-        strTembusan = "<div id=\"trow" + jmlhTembusan +
-            "\" class=\"mb-2\" ><input type=\"text\" name=\"tembusan[]\" class=\"form-control\" placeholder=\"tembusan " +
-            jmlhTembusan + "\"/></div >";
-        $("#tembusan").append(strTembusan);
-        jmlhTembusan += 1;
+    function tambahPelaporanEvaluasi() {
+        var strPelaporanEvaluasi;
+        strPelaporanEvaluasi = "<div id=\"pelaporan_evaluasi_row" + jmlhPelaporanEvaluasi +
+            "\" class=\"mb-2\" ><input type=\"text\" name=\"pelaporan_evaluasi[]\" class=\"form-control\" placeholder=\"Pelaporan & Evaluasi " +
+            jmlhPelaporanEvaluasi + "\"/></div >";
+        $("#pelaporan_evaluasi").append(strPelaporanEvaluasi);
+        jmlhPelaporanEvaluasi += 1;
     }
 
     //hapus elemen/append
-    function hapusMenimbang() {
-        if (jmlhMenimbang != 1) {
-            jmlhMenimbang -= 1;
-            $("#srow" + jmlhMenimbang).remove();
-        }
-    }
-
-    //hapus elemen/append
-    function hapusTembusan() {
-        if (jmlhTembusan != 1) {
-            jmlhTembusan -= 1;
-            $("#trow" + jmlhTembusan).remove();
+    function hapusPelaporanEvaluasi() {
+        if (jmlhPelaporanEvaluasi != 1) {
+            jmlhPelaporanEvaluasi -= 1;
+            $("#pelaporan_evaluasi_row" + jmlhPelaporanEvaluasi).remove();
         }
     }
 

@@ -2,12 +2,12 @@
 
         include "../include/koneksi.php";
 
-        $id_spt = $_GET['id'];
+        $id_antug = $_GET['id'];
 
-        $data_spt = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM spt WHERE id_spt = '$id_spt'"));
-        $petugas = mysqli_query($koneksi, "SELECT * FROM petugas_spt WHERE id_spt = '$id_spt'");
-        $menimbang = mysqli_query($koneksi, "SELECT * FROM menimbang_spt WHERE id_spt = '$id_spt'");
-        $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spt WHERE id_spt = '$id_spt'");
+        $data_antug = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM antug WHERE id_antug = '$id_antug'"));
+        $petugas = mysqli_query($koneksi, "SELECT * FROM petugas_antug WHERE id_antug = '$id_antug'");
+        $menimbang = mysqli_query($koneksi, "SELECT * FROM menimbang_antug WHERE id_antug = '$id_antug'");
+        $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_antug WHERE id_antug = '$id_antug'");
 
         ?> -->
 
@@ -17,7 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../css/tSpt.css"> -->
+    <!-- <link rel="stylesheet" href="../css/tantug.css"> -->
     <title>Document</title>
 </head>
 
