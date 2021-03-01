@@ -37,9 +37,8 @@ include "include/fHistory.php";
       </tbody>
     </table>
   </div>
-  <br>
 
-  <div class="box shadow">
+  <div class="box shadow mt-4">
     <h4>Surat Perintah Pengamanan Pembangunan Strategis</h4><br>
     <table class="table">
       <thead>
@@ -67,9 +66,8 @@ include "include/fHistory.php";
       </tbody>
     </table>
   </div>
-  <br>
 
-  <div class="box shadow">
+  <div class="box shadow mt-4">
     <h4>Surat Perintah Operasi Intelijen</h4><br>
     <table class="table">
       <thead>
@@ -99,7 +97,7 @@ include "include/fHistory.php";
     </table>
   </div>
 
-  <div class="box shadow">
+  <div class="box shadow mt-4">
     <h4>Analisa Sasaran</h4><br>
     <table class="table">
       <thead>
@@ -126,7 +124,32 @@ include "include/fHistory.php";
     </table>
   </div>
 
-
+  <div class="box shadow mt-4">
+    <h4>Analisa Tugas</h4><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No Surat</th>
+          <th>Tanggal Surat</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        while ($data_antug = mysqli_fetch_array($antug)) {
+          $link = $data_antug['id_antug'];
+        ?>
+          <tr>
+            <td></td>
+            <td><?php echo $data_antug['penerbitan'] ?></td>
+            <td>
+              <a class="btn btn-primary" href="template_surat/tAntug.php?id=<?php echo $link; ?>">SHOW</a>
+            </td>
+          </tr>
+        <?php } ?>
+      </tbody>
+    </table>
+  </div>
 
 </div>
 

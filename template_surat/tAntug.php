@@ -1,15 +1,14 @@
-<!-- <?php
+<?php
 
-        include "../include/koneksi.php";
+include "../include/koneksi.php";
 
-        $id_antug = $_GET['id'];
+$id_antug = $_GET['id'];
 
-        $data_antug = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM antug WHERE id_antug = '$id_antug'"));
-        $petugas = mysqli_query($koneksi, "SELECT * FROM petugas_antug WHERE id_antug = '$id_antug'");
-        $menimbang = mysqli_query($koneksi, "SELECT * FROM menimbang_antug WHERE id_antug = '$id_antug'");
-        $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_antug WHERE id_antug = '$id_antug'");
+$data_antug = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM antug WHERE id_antug = '$id_antug'"));
+$petugas = mysqli_query($koneksi, "SELECT * FROM pelaksana_tugas_antug WHERE id_antug = '$id_antug'");
+$pelaporan_evaluasi = mysqli_query($koneksi, "SELECT * FROM pelaporan_evaluasi_antug WHERE id_antug = '$id_antug'");
 
-        ?> -->
+?>
 
 <!DOCTYPE html>
 <html style="line-height: 1;">
@@ -61,179 +60,122 @@
         </center>
 
         <table style="font-size: 11pt; vertical-align:top;">
+            <!-- IDENTIFIKASI TUGAS -->
             <tr>
                 <td style="vertical-align: top;">1. </td>
-                <td>INDENTIFIKASI TUGAS</td>
+                <td>IDENTIFIKASI TUGAS</td>
             </tr>
             <tr>
                 <td></td>
-                <td>Pengamanan (PAM) dan penggalangan (GAL) terkait dengan Surat Perintah Operasi Intelijen Nomor : SP.OPS- 1 /M.3.10/Dip.4/01/2021, tanggal 04 Januari 2021, untuk mendukung kegiatan Seksi Tindak Pidana Umum dan Seksi Tindak Pidana Khusus Kejaksaan Negeri Kota Semarang</td>
+                <td><?php echo $data_antug['identifikasi_tugas'] ?></td>
             </tr>
+
+            <!-- URAIAN TUGAS -->
             <tr>
                 <td style="vertical-align: top;">2. </td>
-                <td>KONDISI DAN SITUASI SASARAN</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <table style="font-size: 11pt;">
-                        <tr>
-                            <td style="vertical-align: top;">a. </td>
-                            <td>Surat Perintah Operasi Intelijen Kepala Kejaksaan Negeri Kota Surat Perintah Operasi Intelijen Nomor : SP.OPS- 1 /M.3.10/Dip.4/01/2021, tanggal 04 Januari 2021 untuk mendukung kegiatan Seksi Tindak Pidana Umum dan Seksi Tindak Pidana Khusus Kejaksaan Negeri Kota Semarang </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;">b. </td>
-                            <td>Bahwa diperlukan pengamanan (PAM) dan penggalangan (GAL) dalam pelaksanaan penyerahan tersangka dan barang bukti maupun pengamanan setiap kegiatan persidangan agar berjalan dengan aman serta mengantisipasi hal-hal yang dapat menimbulkan AGHT yang dapat mengganggu jalannya kegiatan tersebut.</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>KEKUATAN, KELEMAHAN DAN KEHENDAK SASARAN</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
+                <td>URAIAN TUGAS
                     <table>
                         <tr>
-                            <td>a. </td>
-                            <td>KEKUATAN</td>
+                            <td>Waktu: </td>
+                            <td><?php echo $data_antug['penerbitan'] ?></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td style="vertical-align: top;">-</td>
-                                        <td>Personil Pengamanan didukung oleh banyak pihak, yakni terdiri atas : Tim Intelijen Kejaksaan Negeri Kota Semarang.</td>
-                                    </tr>
-                                </table>
-                            </td>
+                            <td>Tempat: </td>
+                            <td><?php echo $data_antug['tempat_tugas'] ?></td>
                         </tr>
                         <tr>
-                            <td>b. </td>
-                            <td>KELEMAHAN</td>
+                            <td>Sasaran: </td>
+                            <td><?php echo $data_antug['sasaran_tugas'] ?></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td style="vertical-align: top;">-</td>
-                                        <td>Ketersediaan ruangan untuk koordinasi maupun pada saat penyerahan tersangka dan barang bukti yang terbatas.</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>c. </td>
-                            <td>KEHENDAK SASARAN</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td style="vertical-align: top;">-</td>
-                                        <td>Pelaksanaan pengamanan Sumber Daya Organisasi (SDO) dan pengamanan penanganan perkara tersebut dapat berhasil dan berjalan dengan aman.</td>
-                                    </tr>
-                                </table>
-                            </td>
+                            <td>Informasi yang diperlukan: </td>
+                            <td><?php echo $data_antug['informasi_diperlukan'] ?></td>
                         </tr>
                     </table>
                 </td>
             </tr>
+
+            <!-- PELAKSANA TUGAS -->
             <tr>
-                <td>4. </td>
-                <td>OPOSISI</td>
+                <td style="vertical-align: top;">3. </td>
+                <td>PELAKSANA TUGAS
+                    <table class="size11">
+                        <?php
+                        $noPetugas = 'a';
+                        while ($data_petugas = mysqli_fetch_array($petugas)) {
+                            $nip = $data_petugas['nip'];
+                            $data = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM pegawai WHERE nip = '$nip'"));
+                        ?>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <?php echo $noPetugas . ". " ?>
+                                </td>
+                                <td> <?php echo $data['nama'] ?></td>
+                            </tr>
+                        <?php
+                            $noPetugas++;
+                        }
+                        ?>
+                    </table>
+                </td>
             </tr>
+
+            <!-- SARANA PENDUKUNG -->
             <tr>
-                <td></td>
-                <td>
+                <td style="vertical-align: top;">4. </td>
+                <td>SARANA PENDUKUNG
                     <table>
                         <tr>
-                            <td>a. </td>
-                            <td>AKTIF</td>
+                            <td>a. Sumber Daya Manusia: </td>
+                            <td><?php echo $data_antug['sarana_pendukung_1'] ?></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td style="vertical-align: top;">-</td>
-                                        <td>Mengantisipasi tersangka / terdakwa yang berusaha melarikan diri pada saat penyerahan tersangka dari penyidik ke Kejaksaan Negeri Kota Semarang.</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top;">-</td>
-                                        <td>Mengantisipasi adanya kemungkinan hilangnya Barang Bukti pada saat penyerahan Barang Bukti dari penyidik ke Kejaksaan Negeri Kota Semarang.</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top;">-</td>
-                                        <td>Mengantisipasi adanya pengunjung maupun keluarga korban / terdakwa yang membuat gaduh di persidangan.</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>b. </td>
-                            <td>PASIF</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td style="vertical-align: top;">-</td>
-                                        <td>Mengantisipasi adanya pihak luar yang tidak berkepentingan yang mengganggu jalannya kegiatan.</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>c. </td>
-                            <td>PENDUKUNG</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td style="vertical-align: top;">-</td>
-                                        <td>Pelaksanaan pengamanan Sumber Daya Organisasi (SDO) dan pengamanan penanganan perkara didukung personil Tim Intelijen Kejaksaan Negeri Kota Semarang dan pihak-pihak yang terkait lainnya.</td>
-                                    </tr>
-                                </table>
-                            </td>
+                            <td>b. Teknologi Intelijen: </td>
+                            <td><?php echo $data_antug['sarana_pendukung_2'] ?></td>
                         </tr>
                     </table>
                 </td>
             </tr>
+
+            <!-- 5.	KOMUNIKASI DAN KOORDINASI -->
+            <tr>
+                <td style="vertical-align: top;">5. </td>
+                <td>KOMUNIKASI DAN KOORDINASI
+                    <table>
+                        <tr>
+                            <td><?php echo $data_antug['komunikasi_koordinasi'] ?></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- PELAPORAN DAN EVALUASI -->
+            <tr>
+                <td style="vertical-align: top;">6. </td>
+                <td>PELAPORAN DAN EVALUASI
+                    <table>
+                        <?php
+                        $noPelaporanEvaluasi = 'a';
+                        while ($data_pelaporan_evaluasi = mysqli_fetch_array($pelaporan_evaluasi)) {
+                        ?>
+                            <tr>
+                                <td><?php echo $noPelaporanEvaluasi . ". " ?></td>
+                                <td><?php echo $data_pelaporan_evaluasi['isi']; ?></td>
+                            </tr>
+                        <?php
+                            $noPelaporanEvaluasi++;
+                        }
+                        ?>
+                    </table>
+                </td>
+            </tr>
+
         </table>
-
-        <br>
-        <br>
-
-        <div style="margin-left:200pt">
-            <center>
-                <span>Semarang, 04 Januari 2021</span>
-                <br>
-                <span>Kepala Seksi Intelijen</span>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <span style="border-bottom: 1px solid currentColor">Subagio Gigih Wijaya, S.H., M.H.</span>
-                <br>
-                <span>Jaksa Muda NIP. 19851116 200812 1 001</span>
-            </center>
-        </div>
-
 </body>
 
 </html>
-<script>
+<!-- <script>
     window.print();
 </script>
-<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
+<meta http-equiv="refresh" content="3;url=../index.php?halaman=history"> -->

@@ -70,11 +70,11 @@ include "../Kejari/include/fAntug.php";
                 <hr>
                 <div class="form-group">
                     <label for="sarana_pendukung_1">Sumber Daya Manusia</label>
-                    <input type="text" name="sarana-pendukung_1" class="form-control" placeholder="">
+                    <input type="text" name="sarana_pendukung_1" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="sarana_pendukung_2">Teknologi Intelijen</label>
-                    <input type="text" name="sarana-pendukung_2" class="form-control mt-2" placeholder="">
+                    <input type="text" name="sarana_pendukung_2" class="form-control mt-2" placeholder="">
                 </div>
             </div>
 
