@@ -38,7 +38,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
                   <br>
                   <span style="font-size: 15pt;">KEJAKSAAN TINGGI JAWA TENGAH</span>
                   <br>
-                  <span style="font-size: 19pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
+                  <span style="font-size: 16pt;">KEJAKSAAN NEGERI KOTA SEMARANG</span>
                 </center>
               </b>
             </div>
@@ -77,15 +77,15 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
       </tr>
 
       <!-- Kondisi & Situasi -->
-      <tr>
-        <td style="vertical-align: top;">2. </td>
+      <tr style="vertical-align: top;">
+        <td>2. </td>
         <td>KONDISI DAN SITUASI SASARAN
           <table>
             <?php
             $noKondisiSituasi = 'a';
             while ($data_kondisi_situasi = mysqli_fetch_array($kondisi_situasi)) {
             ?>
-              <tr>
+              <tr style="vertical-align: top;">
                 <td><?php echo $noKondisiSituasi . ". " ?></td>
                 <td><?php echo $data_kondisi_situasi['isi']; ?></td>
               </tr>
@@ -103,7 +103,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
         <td>KEKUATAN, KELEMAHAN DAN KEHENDAK SASARAN
           <table>
             <tr>
-              <td>a. </td>
+              <td style="vertical-align: top;">a. </td>
               <td>KEKUATAN
                 <table>
                   <!-- kekuatan -->
@@ -111,7 +111,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
                   $noKekuatan = "-";
                   while ($data_kekuatan = mysqli_fetch_array($kekuatan)) {
                   ?>
-                    <tr>
+                    <tr style="vertical-align: top;">
                       <td><?php echo $noKekuatan . " " ?></td>
                       <td><?php echo $data_kekuatan['isi']; ?></td>
                     </tr>
@@ -119,7 +119,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
                 </table>
               </td>
             </tr>
-            <tr>
+            <tr style="vertical-align: top;">
               <td>b. </td>
               <td>KELEMAHAN
                 <table>
@@ -128,7 +128,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
                   $noKelemahan = "-";
                   while ($data_kelemahan = mysqli_fetch_array($kelemahan)) {
                   ?>
-                    <tr>
+                    <tr style="vertical-align: top;">
                       <td><?php echo $noKelemahan . " " ?></td>
                       <td><?php echo $data_kelemahan['isi']; ?></td>
                     </tr>
@@ -137,7 +137,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
               </td>
             </tr>
             <tr>
-              <td>c. </td>
+              <td style="vertical-align: top;">c. </td>
               <td>KEHENDAK SASARAN
                 <table>
                   <!-- Kehendak -->
@@ -145,7 +145,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
                   $noKehendak = "-";
                   while ($data_kehendak = mysqli_fetch_array($kehendak)) {
                   ?>
-                    <tr>
+                    <tr style="vertical-align: top;">
                       <td><?php echo $noKehendak . " " ?></td>
                       <td><?php echo $data_kehendak['isi']; ?></td>
                     </tr>
@@ -162,15 +162,15 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
         <td>OPOSISI
           <table>
             <!-- OpAktif -->
-            <tr>
+            <tr style="vertical-align: top;">
               <td>a. </td>
-              <td>AKTIf
+              <td>AKTIF
                 <table>
                   <?php
                   $noOpAktif = "-";
                   while ($data_op_aktif = mysqli_fetch_array($op_aktif)) {
                   ?>
-                    <tr>
+                    <tr style="vertical-align: top;">
                       <td>
                         <?php echo $noOpAktif . " " ?>
                       </td>
@@ -182,14 +182,14 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
             </tr>
             <!-- OpPasif -->
             <tr>
-              <td>b. </td>
+              <td style="vertical-align: top;">b. </td>
               <td>PASIF
                 <table>
                   <?php
                   $noOpPasif = "-";
                   while ($data_op_pasif = mysqli_fetch_array($op_pasif)) {
                   ?>
-                    <tr>
+                    <tr style="vertical-align: top;">
                       <td>
                         <?php echo $noOpPasif . " " ?>
                       </td>
@@ -200,7 +200,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
               </td>
             </tr>
             <!-- OpPendukung -->
-            <tr>
+            <tr style="vertical-align: top;">
               <td>c. </td>
               <td>PENDUKUNG
                 <table>
@@ -208,7 +208,7 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
                   $noOpPendukung = "-";
                   while ($data_op_pendukung = mysqli_fetch_array($op_pendukung)) {
                   ?>
-                    <tr>
+                    <tr style="vertical-align: top;">
                       <td><?php echo $noOpPendukung . " " ?></td>
                       <td><?php echo $data_op_pendukung['isi']; ?></td>
                     </tr>
@@ -221,10 +221,25 @@ $op_pendukung = mysqli_query($koneksi, "SELECT * FROM op_pendukung_ansas WHERE i
       </tr>
     </table>
 
+
+    <div style="text-align: center; margin-left:45%;">
+      <span>
+        Semarang, <?php echo date('d M Y', strtotime($data_ansas['penerbitan'])); ?>
+      </span>
+      <br>
+      <div>
+        <span>Kepala Seksi Intelijen</span>
+        <br><br><br><br><br>
+        <span><u>Subagio Gigih Wijaya, S.H., M.H.</u></span>
+        <br>
+        <span>Jaksa Muda NIP. 19851116 200812 1 001</span>
+      </div>
+    </div>
+
 </body>
 
 </html>
-<!-- <script>
+<script>
   window.print();
 </script>
-<meta http-equiv="refresh" content="3;url=../index.php?halaman=history"> -->
+<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">

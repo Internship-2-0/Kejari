@@ -76,15 +76,15 @@ $pelaporan_evaluasi = mysqli_query($koneksi, "SELECT * FROM pelaporan_evaluasi_a
                 <td>URAIAN TUGAS
                     <table>
                         <tr>
-                            <td>Waktu: </td>
+                            <td>Waktu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
                             <td><?php echo $data_antug['penerbitan'] ?></td>
                         </tr>
                         <tr>
-                            <td>Tempat: </td>
+                            <td>Tempat&nbsp;&nbsp;&nbsp;&nbsp;: </td>
                             <td><?php echo $data_antug['tempat_tugas'] ?></td>
                         </tr>
                         <tr>
-                            <td>Sasaran: </td>
+                            <td>Sasaran&nbsp;&nbsp;&nbsp;: </td>
                             <td><?php echo $data_antug['sasaran_tugas'] ?></td>
                         </tr>
                         <tr>
@@ -159,7 +159,7 @@ $pelaporan_evaluasi = mysqli_query($koneksi, "SELECT * FROM pelaporan_evaluasi_a
                         $noPelaporanEvaluasi = 'a';
                         while ($data_pelaporan_evaluasi = mysqli_fetch_array($pelaporan_evaluasi)) {
                         ?>
-                            <tr>
+                            <tr style="vertical-align: top;">
                                 <td><?php echo $noPelaporanEvaluasi . ". " ?></td>
                                 <td><?php echo $data_pelaporan_evaluasi['isi']; ?></td>
                             </tr>
@@ -172,10 +172,26 @@ $pelaporan_evaluasi = mysqli_query($koneksi, "SELECT * FROM pelaporan_evaluasi_a
             </tr>
 
         </table>
+
+        <div style="text-align: center; margin-left:45%;">
+            <br>
+            <span>
+                Semarang, <?php echo date('d M Y', strtotime($data_antug['penerbitan'])); ?>
+            </span>
+            <br>
+            <div>
+                <span>Kepala Seksi Intelijen</span>
+                <br><br><br><br><br>
+                <span><u>Subagio Gigih Wijaya, S.H., M.H.</u></span>
+                <br>
+                <span>Jaksa Muda NIP. 19851116 200812 1 001</span>
+            </div>
+        </div>
+
 </body>
 
 </html>
-<!-- <script>
+<script>
     window.print();
 </script>
-<meta http-equiv="refresh" content="3;url=../index.php?halaman=history"> -->
+<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
