@@ -23,10 +23,10 @@ $pelaporan_evaluasi = mysqli_query($koneksi, "SELECT * FROM pelaporan_evaluasi_a
 <body style="font-family:Arial, Helvetica, sans-serif">
     <div style="margin: 1.75cm 1.8cm 2.06cm 2.22cm ;">
         <center>
-            <table>
+            <table style="border: 1px solid black;">
                 <tr>
-                    <td><img src="../img/Logo.png" width="50" height="50" style="margin-right: 50px;"></td>
-                    <td>
+                    <td style="width: 1%;"><img src="../img/Logo.png" width="50" height="50" style="margin-right: 50px;"></td>
+                    <td style="width: 200%;">
                         <div>
                             <b>
                                 <center>
@@ -87,14 +87,21 @@ $pelaporan_evaluasi = mysqli_query($koneksi, "SELECT * FROM pelaporan_evaluasi_a
                             <td>Sasaran&nbsp;&nbsp;&nbsp;: </td>
                             <td><?php echo $data_antug['sasaran_tugas'] ?></td>
                         </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <table>
                         <tr>
-                            <td>Informasi yang diperlukan: </td>
-                            <td><?php echo $data_antug['informasi_diperlukan'] ?></td>
+                            <td style="vertical-align: top;">Informasi yang diperlukan :
+                                <?php echo $data_antug['informasi_diperlukan'] ?>
+                            </td>
                         </tr>
                     </table>
                 </td>
             </tr>
-
             <!-- PELAKSANA TUGAS -->
             <tr>
                 <td style="vertical-align: top;">3. </td>
@@ -187,7 +194,7 @@ $pelaporan_evaluasi = mysqli_query($koneksi, "SELECT * FROM pelaporan_evaluasi_a
                 <span>Jaksa Muda NIP. 19851116 200812 1 001</span>
             </div>
         </div>
-
+    </div>
 </body>
 
 </html>
