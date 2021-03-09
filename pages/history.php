@@ -29,8 +29,8 @@ include "include/fHistory.php";
             </td>
             <td><?php echo $data_spt['penerbitan'] ?></td>
             <td>
+              <a class="btn btn-danger" href="pages/hapus_surat_spt.php?id=<?php echo $link; ?>">DELETE</a>
               <a class="btn btn-primary" href="template_surat/tSpt.php?id=<?php echo $link; ?>">SHOW</a>
-              <a name="hapus_spt" class="btn btn-danger" href="pages/hapus_surat.php?id=<?php echo $link; ?>">HAPUS</a>
             </td>
           </tr>
         <?php } ?>
@@ -59,6 +59,7 @@ include "include/fHistory.php";
             </td>
             <td><?php echo $data_sppps['penerbitan'] ?></td>
             <td>
+              <a class="btn btn-danger" href="pages/hapus_surat_sppps.php?id=<?php echo $link; ?>">DELETE</a>
               <a class="btn btn-primary" href="template_surat/tSppps.php?id=<?php echo $link; ?>">SHOW</a>
             </td>
           </tr>
@@ -88,8 +89,8 @@ include "include/fHistory.php";
             </td>
             <td><?php echo $data_spoi['penerbitan'] ?></td>
             <td>
+              <a class="btn btn-danger" href="pages/hapus_surat_spoi.php?id=<?php echo $link; ?>">DELETE</a>
               <a class="btn btn-primary" href="template_surat/tSpoi.php?id=<?php echo $link; ?>">SHOW</a>
-
             </td>
           </tr>
         <?php } ?>
@@ -116,6 +117,7 @@ include "include/fHistory.php";
             <td></td>
             <td><?php echo $data_ansas['penerbitan'] ?></td>
             <td>
+              <a class="btn btn-danger" href="pages/hapus_surat_ansas.php?id=<?php echo $link; ?>">DELETE</a>
               <a class="btn btn-primary" href="template_surat/tAnsas.php?id=<?php echo $link; ?>">SHOW</a>
             </td>
           </tr>
@@ -143,6 +145,7 @@ include "include/fHistory.php";
             <td></td>
             <td><?php echo $data_antug['penerbitan'] ?></td>
             <td>
+              <a class="btn btn-danger" href="pages/hapus_surat_antug.php?id=<?php echo $link; ?>">DELETE</a>
               <a class="btn btn-primary" href="template_surat/tAntug.php?id=<?php echo $link; ?>">SHOW</a>
             </td>
           </tr>

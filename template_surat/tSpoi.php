@@ -237,7 +237,7 @@ $tembusan = mysqli_query($koneksi, "SELECT * FROM tembusan_spoi WHERE id_spoi = 
 </html>
 
 
-<!-- <script>
+<script>
     window.print();
 </script>
-<meta http-equiv="refresh" content="3;url=../index.php?halaman=history"> -->
+<meta http-equiv="refresh" content="3;url=../index.php?halaman=history">
